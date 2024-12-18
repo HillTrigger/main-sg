@@ -1,0 +1,110 @@
+@use "@/styles/color";
+
+.header {
+  & * {
+    background-color: transparent;
+  }
+  &__inner {
+    display: grid;
+    grid-template-rows: calc(280 / 612 * 1fr) 368px calc(332 / 612 * 1fr);
+    position: relative;
+    max-width: 85.75rem;
+    height: 100%;
+    margin: 0 auto;
+  }
+  &__bg {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    // position: absolute; /* Размещаем картинку относительно окна */
+    // top: 0; /* Выровнять сверху */
+    // left: 0; /* Выровнять слева */
+    object-fit: cover; /* Картинка заполняет пространство, сохраняя пропорции */
+    z-index: -1;
+    // padding-top: 17.5rem;
+    // padding-bottom: 20.75rem;
+    &.active {
+      width: 100vw; /* Задаем ширину 100% от ширины экрана */
+      height: 100vh; /* Задаем высоту 100% от высоты экрана */
+    }
+  }
+  &__bg--1 {
+    background-image: url(./assests/header/headerMain/background.jpg);
+    background-size: cover; /* Заполняет весь экран, обрезая изображение по необходимости */
+    background-position: 72% 50%; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Не повторяет изображение */
+    // background-attachment: fixed; /* Фиксирует фоновое изображение при прокрутке */
+  }
+  &__text {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    gap: 3.5rem;
+    height: 100%;
+    margin-left: 2rem;
+  }
+  &__title {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 5rem;
+    max-width: 49.5rem;
+  }
+  &__sub-title {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  &__sub-title span {
+    font-size: 3rem;
+    line-height: 2.5rem;
+    color: color.$primary;
+  }
+  &__pagination {
+    margin-bottom: 3.4375rem;
+    position: absolute;
+    padding-left: 2rem;
+    bottom: 0rem; //НЕВЕРНОЕ ЗНАЧЕНИЕ
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    line-height: 2rem;
+    font-weight: 400;
+
+    &-page {
+      display: inline-block;
+      border-radius: 50%;
+      padding: 1.125rem;
+      margin-right: -0.4rem;
+      cursor: pointer;
+      &:last-child {
+        margin-right: 0;
+      }
+      & div {
+        border-radius: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: color.$secondary;
+      }
+
+      &--active {
+        box-shadow: inset 0px 0px 0px 1px color.$secondary;
+      }
+    }
+
+    & i {
+      color: color.$primary;
+      font-size: 1.125rem;
+    }
+    &-current {
+      font-size: 3rem;
+      margin-right: 0.1rem;
+    }
+
+    &-total {
+      font-size: 1.125rem;
+      margin-right: 0.1rem;
+    }
+  }
+}

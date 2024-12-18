@@ -1,0 +1,26 @@
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container {
+  max-width: 85.75rem;
+  height: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  // outline: black 1px solid;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  width: auto;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
