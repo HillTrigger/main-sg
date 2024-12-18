@@ -1,0 +1,21 @@
+@use "@/styles/color";
+@use "@/styles/fonts";
+
+* {
+  font-weight: 500;
+  color: color.$text-primary;
+  font-family: fonts.$Railway;
+  font-weight: 400;
+  background-color: color.$background;
+  font-size: 1rem;
+}
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container {
+  max-width: 85.75rem;
+  margin: 0 auto;
+  // outline: black 1px solid;
+}

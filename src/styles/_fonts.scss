@@ -1,0 +1,67 @@
+@font-face {
+  font-family: Railway;
+  font-weight: 300;
+  font-style: normal;
+  src: local("Railway"),
+    url("@/assests/fonts/Raleway/Raleway-Light.woff2") format("woff2"),
+    url("@/assests/fonts/Raleway/Raleway-Light.woff") format("woff"),
+    url("@/assests/fonts/Raleway/Raleway-Light.ttf") format("ttf"),
+    url("@/assests/fonts/Raleway/Raleway-Light.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: Railway;
+  font-weight: 400;
+  font-style: normal;
+  src: local("Railway"),
+    url("@/assests/fonts/Raleway/Raleway-Regular.woff2") format("woff2"),
+    url("@/assests/fonts/Raleway/Raleway-Regular.woff") format("woff"),
+    url("@/assests/fonts/Raleway/Raleway-Regular.ttf") format("ttf"),
+    url("@/assests/fonts/Raleway/Raleway-Regular.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: Railway;
+  font-weight: 400;
+  font-style: italic;
+  src: local("Railway"),
+    url("@/assests/fonts/Raleway/Raleway-Italic.woff2") format("woff2"),
+    url("@/assests/fonts/Raleway/Raleway-Italic.woff") format("woff"),
+    url("@/assests/fonts/Raleway/Raleway-Italic.ttf") format("ttf"),
+    url("@/assests/fonts/Raleway/Raleway-Italic.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: Railway;
+  font-weight: 500;
+  font-style: normal;
+  src: local("Railway"),
+    url("@/assests/fonts/Raleway/Raleway-Medium.woff2") format("woff2"),
+    url("@/assests/fonts/Raleway/Raleway-Medium.woff") format("woff"),
+    url("@/assests/fonts/Raleway/Raleway-Medium.ttf") format("ttf"),
+    url("@/assests/fonts/Raleway/Raleway-Medium.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: Railway;
+  font-weight: 600;
+  font-style: normal;
+  src: local("Railway"),
+    url("@/assests/fonts/Raleway/Raleway-SemiBold.woff2") format("woff2"),
+    url("@/assests/fonts/Raleway/Raleway-SemiBold.woff") format("woff"),
+    url("@/assests/fonts/Raleway/Raleway-SemiBold.ttf") format("ttf"),
+    url("@/assests/fonts/Raleway/Raleway-SemiBold.eot") format("eot");
+  font-display: swap;
+}
+@font-face {
+  font-family: Railway;
+  font-weight: 700;
+  font-style: normal;
+  src: local("Railway"),
+    url("@/assests/fonts/Raleway/Raleway-Bold.woff2") format("woff2"),
+    url("@/assests/fonts/Raleway/Raleway-Bold.woff") format("woff"),
+    url("@/assests/fonts/Raleway/Raleway-Bold.ttf") format("ttf"),
+    url("@/assests/fonts/Raleway/Raleway-Bold.eot") format("eot");
+  font-display: swap;
+}
+$Railway: "Railway", Arial, sans-serif;
