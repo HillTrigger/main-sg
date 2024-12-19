@@ -43,7 +43,6 @@
     // justify-content: space-between;
     gap: 3.5rem;
     height: 100%;
-    margin-left: 2rem;
   }
   &__title {
     font-size: 4rem;
@@ -64,8 +63,7 @@
   &__pagination {
     margin-bottom: 3.4375rem;
     position: absolute;
-    padding-left: 2rem;
-    bottom: 0rem; //НЕВЕРНОЕ ЗНАЧЕНИЕ
+    bottom: 0rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
