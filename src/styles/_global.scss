@@ -1,7 +1,8 @@
 @use "@/styles/color";
 @use "@/styles/fonts";
 
-* {
+html,
+body {
   font-weight: 500;
   color: color.$text-primary;
   font-family: fonts.$Railway;
