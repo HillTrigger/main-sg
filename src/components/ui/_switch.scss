@@ -1,0 +1,63 @@
+@use "@/styles/color";
+
+$switch-width: 2.75rem;
+$switch-height: 1.375rem;
+
+$circle: 1.175rem;
+
+$padding: 0.1rem;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $switch-width; //МЕНЯТЬ В РУЧНУЮ
+  height: $switch-height; //МЕНЯТЬ В РУЧНУЮ
+}
+
+/* Hide default HTML checkbox */
+.switch__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color.$checkbox-phone;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 1.5rem;
+}
+
+.switch__slider:before {
+  position: absolute;
+  content: "";
+  height: $circle; //МЕНЯТЬ В РУЧНУЮ
+  width: $circle; //МЕНЯТЬ В РУЧНУЮ
+  left: $padding;
+  bottom: $padding;
+  border-radius: 1.5rem;
+  background-color: color.$background;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch__input:checked + .switch__slider {
+  background-color: color.$secondary;
+}
+
+.switch__input:focus + .switch__slider {
+  box-shadow: 0 0 1px color.$secondary;
+}
+
+.switch__input:checked + .switch__slider:before {
+  -webkit-transform: translateX(calc($switch-width - $circle - $padding * 2));
+  -ms-transform: translateX(calc($switch-width - $circle - $padding * 2));
+  transform: translateX(calc($switch-width - $circle - $padding * 2));
+}

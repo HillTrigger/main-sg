@@ -268,7 +268,7 @@
             </div>
             <button class="populars__all-products">Все<br />продукты</button>
           </div>
-          <div class="main__forecast forecast">
+          <div class="main__forecast forecast hidden">
             <div class="forecast__top">
               <h2 class="forecast__title">Тенденции и прогнозы</h2>
               <div class="forecast__btns">
@@ -336,6 +336,56 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="main__subscribe subscribe">
+            <img
+              src="./assests/main/subscribe/Leo.png"
+              alt=""
+              class="subscribe__image"
+            />
+            <form class="subscribe__form">
+              <h3 class="subscribe__title">Будь в курсе!</h3>
+              <p class="subscribe__desc">
+                Подпишись и узнавай новости финансовых рынков первым
+              </p>
+
+              <div class="subscribe__settings">
+                <label class="subscribe__switch">
+                  <div class="switch">
+                    <input type="checkbox" class="switch__input" />
+                    <span class="switch__slider"></span>
+                  </div>
+                  Все
+                </label>
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox" class="checkbox__inp" />
+                  <label for="checkbox" class="checkbox__label"
+                    >Объявления клиентам</label
+                  >
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox2" class="checkbox__inp" />
+                  <label for="checkbox2" class="checkbox__label"
+                    >Новости ИИС</label
+                  >
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox3" class="checkbox__inp" />
+                  <label for="checkbox3" class="checkbox__label"
+                    >СМИ о нас</label
+                  >
+                </div>
+              </div>
+              <div class="subscribe__email">
+                <label class="subscribe__input-container">
+                  Email
+                  <input type="email" class="subscribe__input" required />
+                </label>
+                <button type="submit" class="subscribe__sumbit">
+                  ПОДПИСАТЬСЯ
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </main>
