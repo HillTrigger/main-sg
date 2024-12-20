@@ -4,9 +4,7 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     gap: 1.25rem;
-    margin-bottom: 3.4375rem;
   }
   &__main-title {
     font-weight: 600;
@@ -93,6 +91,7 @@
     // left: 0;
     max-width: 13.25rem;
     height: 30.875rem;
+    width: 100%;
     object-fit: cover;
   }
   &__all-products {
