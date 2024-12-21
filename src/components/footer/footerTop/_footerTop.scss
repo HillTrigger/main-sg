@@ -1,0 +1,106 @@
+@use "@/styles/color";
+
+.footer {
+  &__top {
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+      minmax(15.625rem, 27.6875rem) 0.265fr 11.5625rem 0.54fr minmax(
+        159px,
+        228px
+      )
+      0.193fr;
+
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+  &__info {
+    max-width: 27.6875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625rem;
+  }
+  &__company-name {
+    // margin-bottom: 1.625rem;
+  }
+  &__company-name,
+  &__company-adress {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 1%;
+
+    i {
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+  &__socials {
+    display: flex;
+    gap: 0.6875rem;
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px color.$question solid;
+    border-radius: 100px;
+  }
+
+  &__navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+
+    grid-column: 3 / 4;
+    &-link:hover {
+      transition: all 0.4s ease;
+      color: color.$primary;
+    }
+  }
+  &__contacts {
+    padding-top: 0.5625rem;
+    position: relative;
+    grid-column: 5 / 6;
+  }
+  &__contact-tel {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    &:nth-child(2) {
+      padding-bottom: 0.8125rem;
+    }
+    a {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+    span {
+      color: color.$text-secondary;
+    }
+  }
+
+  &__contact-email {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    width: 14.25rem;
+    height: 3rem;
+    background-color: color.$background;
+    border-radius: 100px;
+    border: 1px color.$primary solid;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+  }
+}

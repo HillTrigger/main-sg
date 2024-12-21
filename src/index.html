@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header hidden">
         <div class="header__top">
           <a class="header__logo">
             <img src="./assests/header/headerTop/LOGO.svg" alt="logo" />
@@ -89,7 +89,7 @@
           </div>
         </div>
         <div class="header__main">
-          <div class="header__bg header__bg--1 active">
+          <div class="header__bg header__bg--1">
             <div class="header__inner">
               <div class="header__text">
                 <h1 class="header__title">
@@ -118,7 +118,7 @@
       </header>
       <main class="main">
         <div class="container">
-          <div class="main__stats stats">
+          <div class="main__stats stats hidden">
             <div class="stats__stat">
               <div class="stats__value"><span>25+</span>лет</div>
               <div class="stats__desc">
@@ -134,7 +134,7 @@
               <div class="stats__desc">инвесторов нам доверяют</div>
             </div>
           </div>
-          <div class="main__strategies strategies">
+          <div class="main__strategies strategies hidden">
             <h2 class="strategies__title">
               Инвестиционные стратегии для
               <span
@@ -175,7 +175,7 @@
               </div>
             </div>
           </div>
-          <div class="main__populars populars">
+          <div class="main__populars populars hidden">
             <h2 class="populars__main-title">
               Популярные продукты
               <div class="populars__line"></div>
@@ -268,7 +268,7 @@
             </div>
             <button class="populars__all-products">Все<br />продукты</button>
           </div>
-          <div class="main__forecast forecast">
+          <div class="main__forecast forecast hidden">
             <div class="forecast__top">
               <h2 class="forecast__title">Тенденции и прогнозы</h2>
               <div class="forecast__btns">
@@ -337,7 +337,7 @@
               </div>
             </div>
           </div>
-          <div class="main__subscribe subscribe">
+          <div class="main__subscribe subscribe hidden">
             <img
               src="./assests/main/subscribe/Leo.png"
               alt=""
@@ -387,12 +387,91 @@
               </div>
             </form>
           </div>
-          <div class="main__question question">
+          <div class="main__question question hidden">
             <div class="question__text">НУЖНА КОНСУЛЬТАЦИЯ?</div>
           </div>
         </div>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__top">
+          <div class="footer__info">
+            <a class="footer__logo">
+              <img src="./assests/header/headerTop/LOGO.svg" alt="LOGO" />
+            </a>
+            <div class="footer__company-name">АО «СОЛИД Менеджмент»</div>
+            <div class="footer__company-adress">
+              <i>Адрес</i>: Российская Федерация, 125284, город Москва,
+              Хорошёвское шоссе, дом 32А, этаж 5, пом XVI, комн 2
+            </div>
+            <div class="footer__socials">
+              <a class="footer__social"
+                ><svg
+                  width="20"
+                  height="14"
+                  viewBox="0 0 20 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.8931 13.1935C4.0599 13.1935 0.162399 8.54595 0 0.8125H3.42286C3.53529 6.48865 6.05865 8.89296 8.0574 9.38869V0.8125H11.2805V5.70787C13.2543 5.49718 15.3277 3.26638 16.0273 0.8125H19.2503C18.7132 3.83648 16.4646 6.06728 14.8656 6.98439C16.4646 7.72799 19.0256 9.67374 20 13.1935H16.4521C15.6901 10.8387 13.7914 9.01689 11.2805 8.76903V13.1935H10.8931Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a class="footer__social"
+                ><svg
+                  width="18"
+                  height="14"
+                  viewBox="0 0 18 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 1.65738C17.3306 1.93846 16.6174 2.12477 15.8737 2.21523C16.6388 1.778 17.2226 1.09092 17.4971 0.262769C16.7839 0.669846 15.9964 0.957385 15.1571 1.11785C14.4799 0.427539 13.5146 0 12.4616 0C10.4186 0 8.77387 1.58738 8.77387 3.53339C8.77387 3.81339 8.79862 4.08262 8.85938 4.33892C5.7915 4.19569 3.07687 2.78815 1.25325 0.644C0.934875 1.17277 0.748125 1.778 0.748125 2.42954C0.748125 3.65292 1.40625 4.73738 2.38725 5.36523C1.79437 5.35446 1.21275 5.18969 0.72 4.93015C0.72 4.94092 0.72 4.95492 0.72 4.96892C0.72 6.68554 1.99912 8.11139 3.6765 8.43985C3.37612 8.51846 3.04875 8.55615 2.709 8.55615C2.47275 8.55615 2.23425 8.54323 2.01038 8.49585C2.4885 9.89477 3.84525 10.9232 5.4585 10.9566C4.203 11.8968 2.60888 12.4632 0.883125 12.4632C0.5805 12.4632 0.29025 12.4503 0 12.4148C1.63462 13.4238 3.57188 14 5.661 14C12.4515 14 16.164 8.61539 16.164 3.948C16.164 3.79185 16.1584 3.64108 16.1505 3.49138C16.8829 2.99385 17.4982 2.37246 18 1.65738Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a class="footer__social"
+                ><svg
+                  width="20"
+                  height="17"
+                  viewBox="0 0 20 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 0.602412L16.8367 16.2925C16.8367 16.2925 16.3945 17.3804 15.1777 16.8582L7.84521 11.337C8.83076 10.4654 16.4765 3.70292 16.8109 3.39625C17.3277 2.92164 17.007 2.63918 16.4062 2.99812L5.11276 10.0538L0.755697 8.61077C0.755697 8.61077 0.0697532 8.37135 0.00373698 7.84909C-0.0626698 7.32683 0.777962 7.04399 0.777962 7.04399L18.5402 0.188909C18.5402 0.188909 20 -0.442105 20 0.602412Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__navbar">
+            <a href="#" class="footer__navbar-link">О компании</a>
+            <a href="#" class="footer__navbar-link">Услуги</a>
+            <a href="#" class="footer__navbar-link">Новости</a>
+            <a href="#" class="footer__navbar-link">Раскрытие информации</a>
+            <a href="#" class="footer__navbar-link">Контакты</a>
+          </div>
+          <div class="footer__contacts">
+            <div class="footer__contact-tel">
+              <a href="tel:+78002507015"> 8 800 250 7015 </a>
+              <span>Бесплатно по России</span>
+            </div>
+            <div class="footer__contact-tel">
+              <a href="tel:+74952287015"> 8 495 228 7015 </a>
+              <span>Для звонков по Москве</span>
+            </div>
+            <div class="footer__contact-email">
+              <a href="mailto:am.solid@solid-mn.ru"> am.solid@solid-mn.ru </a>
+            </div>
+            <button class="footer__btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+          </div>
+        </div>
+        <div class="footer__main"></div>
+      </footer>
     </div>
   </body>
 </html>
