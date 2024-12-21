@@ -4,3 +4,21 @@
 @use "./forecast/forecast";
 @use "./subscribe/subscribe";
 @use "./question/question";
+
+.main {
+  &__strategies {
+    margin-bottom: 8.9375rem;
+  }
+  &__populars {
+    margin-bottom: 8.875rem;
+  }
+  &__forecast {
+    margin-bottom: 10.5rem;
+  }
+  &__subscribe {
+    margin-bottom: 8.5rem;
+  }
+  &__question {
+    margin-bottom: 8.5rem;
+  }
+}
