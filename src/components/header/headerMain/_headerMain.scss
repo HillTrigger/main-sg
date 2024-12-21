@@ -45,10 +45,16 @@
     height: 100%;
   }
   &__title {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 5rem;
     max-width: 49.5rem;
+
+    & i {
+      font-style: normal;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 5rem;
+      opacity: 0;
+      filter: blur(3px);
+    }
   }
   &__sub-title {
     font-weight: 500;
@@ -85,7 +91,9 @@
         height: 0.5rem;
         background-color: color.$secondary;
       }
-
+      &:hover {
+        box-shadow: inset 0px 0px 0px 1px color.$secondary;
+      }
       &--active {
         box-shadow: inset 0px 0px 0px 1px color.$secondary;
       }
@@ -103,6 +111,33 @@
     &-total {
       font-size: 1.125rem;
       margin-right: 0.1rem;
+    }
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scale(1);
+  }
+}
+
+@for $i from 1 through 50 {
+  .header__title {
+    i:nth-child(#{$i}) {
+      animation: fade-in
+        0.3s
+        /* Быстрая анимация 0.3 секунды */
+        #{($i * 0.05)}s
+        /* Увеличиваем задержку анимации для каждого i */
+        forwards
+        cubic-bezier(0.11, 0, 0.5, 0);
     }
   }
 }

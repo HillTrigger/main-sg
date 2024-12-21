@@ -2,6 +2,11 @@
 
 .header {
   &__top {
+    transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease,
+      margin 0.3s ease, background-color 0.3s ease;
+    opacity: 1; /* Элемент по умолчанию видим */
+    visibility: visible; /* Элемент по умолчанию видим */
+    // transition: background-color 0.8s ease;
     // display: flex;
     position: fixed;
     width: 100%;
