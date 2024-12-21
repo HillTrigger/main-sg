@@ -11,7 +11,24 @@
     font-size: 4rem;
     line-height: 5rem;
     margin-bottom: 4rem;
+
+    span {
+      // color: red;
+      position: relative;
+      z-index: 0;
+    }
   }
+
+  &__line {
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    height: 2rem;
+    width: 24.75rem;
+    background-color: color.$tertiary;
+    z-index: -1;
+  }
+
   &__card {
     padding-left: 3.5rem;
     display: flex;
@@ -46,6 +63,7 @@
     font-weight: 700;
     margin-bottom: 0.8125rem;
   }
+
   &__SCHA {
     margin-bottom: 0.4375rem;
   }

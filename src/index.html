@@ -89,10 +89,10 @@
           </div>
         </div>
         <div class="header__main">
-          <div class="header__bg header__bg--1 active">
+          <div class="header__bg header__bg--2">
             <div class="header__inner">
               <div class="header__text">
-                <h1 class="header__title">
+                <h1 class="header__title header__title--1">
                   <i>«</i><i>С</i><i>о</i><i>л</i><i>и</i><i>д</i><i>-</i
                   ><i>Г</i><i>л</i><i>о</i><i>б</i><i>у</i><i>с</i><i>»</i
                   ><i>&#160;</i><i>—</i> <i>и</i><i>н</i><i>в</i><i>е</i><i>с</i
@@ -101,18 +101,60 @@
                   ><i>л</i><i>о</i><i>б</i><i>а</i><i>л</i><i>ь</i><i>н</i
                   ><i>о</i>
                 </h1>
-
-                <p class="header__sub-title"><span>+ 40,40%</span> за 5 лет</p>
+                <h1
+                  class="header__title header__title--2 header__title--active"
+                >
+                  <i>М</i><i>о</i><i>и</i><i>&#160;</i><i>ф</i><i>и</i><i>н</i
+                  ><i>а</i><i>н</i><i>с</i><i>ы</i><i>&#160;</i><i>–</i
+                  ><i>&#160;</i><i>м</i><i>о</i><i>я</i> <i>к</i><i>р</i><i>е</i
+                  ><i>п</i><i>о</i><i>с</i><i>т</i><i>ь</i>
+                </h1>
+                <h1 class="header__title header__title--3">
+                  <i>«</i><i>С</i><i>о</i><i>л</i><i>и</i><i>д</i><i>-</i
+                  ><i>Г</i><i>л</i><i>о</i><i>б</i><i>у</i><i>с</i><i>»</i
+                  ><i>&#160;</i><i>—</i> <i>и</i><i>н</i><i>в</i><i>е</i><i>с</i
+                  ><i>т</i><i>и</i><i>р</i><i>у</i><i>й</i><i>&#160;</i> <i>в</i
+                  ><i>&#160;</i><i>а</i><i>к</i><i>ц</i><i>и</i><i>и</i> <i>г</i
+                  ><i>л</i><i>о</i><i>б</i><i>а</i><i>л</i><i>ь</i><i>н</i
+                  ><i>о</i>
+                </h1>
+                <h1 class="header__title header__title--4">
+                  <i>«</i><i>С</i><i>о</i><i>л</i><i>и</i><i>д</i><i>-</i
+                  ><i>Г</i><i>л</i><i>о</i><i>б</i><i>у</i><i>с</i><i>»</i
+                  ><i>&#160;</i><i>—</i> <i>и</i><i>н</i><i>в</i><i>е</i><i>с</i
+                  ><i>т</i><i>и</i><i>р</i><i>у</i><i>й</i><i>&#160;</i> <i>в</i
+                  ><i>&#160;</i><i>а</i><i>к</i><i>ц</i><i>и</i><i>и</i> <i>г</i
+                  ><i>л</i><i>о</i><i>б</i><i>а</i><i>л</i><i>ь</i><i>н</i
+                  ><i>о</i>
+                </h1>
+                <p class="header__sub-title header__sub-title--1">
+                  <span>+ 40,40%</span> за 5 лет
+                </p>
+                <p
+                  class="header__sub-title header__sub-title--2 header__sub-title--active"
+                >
+                  <span>ОПИФ</span> «Солид-Пенсионный капитал»
+                </p>
+                <p class="header__sub-title header__sub-title--3"></p>
+                <p class="header__sub-title header__sub-title--4"></p>
               </div>
               <div class="header__pagination">
                 <nav class="header__pagination-nav">
-                  <a class="header__pagination-page"><div></div></a>
-                  <a
-                    class="header__pagination-page header__pagination-page--active"
+                  <a data-page="1" class="header__pagination-page"
                     ><div></div
                   ></a>
-                  <a class="header__pagination-page"><div></div></a>
-                  <a class="header__pagination-page"><div></div></a>
+                  <a
+                    data-page="2"
+                    class="header__pagination-page header__pagination-page--active"
+                  >
+                    <div></div>
+                  </a>
+                  <a data-page="3" class="header__pagination-page"
+                    ><div></div
+                  ></a>
+                  <a data-page="4" class="header__pagination-page"
+                    ><div></div
+                  ></a>
                 </nav>
                 <div>
                   <span class="header__pagination-current">02</span><i>/</i
@@ -184,7 +226,11 @@
           </div>
           <div class="main__populars populars">
             <h2 class="populars__main-title">
-              Популярные продукты
+              <span
+                >Популярные продукты
+                <div class="populars__line"></div
+              ></span>
+
               <div class="populars__line"></div>
             </h2>
             <div class="populars__cards">

@@ -1,6 +1,8 @@
 @use "@/styles/color";
 
 .header {
+  background-color: #fbf2e3;
+
   & * {
     background-color: transparent;
   }
@@ -13,39 +15,69 @@
     margin: 0 auto;
   }
   &__bg {
-    opacity: 0;
-    visibility: hidden;
-    width: 0;
-    height: 0;
+    // opacity: 0;
+    // visibility: hidden;
+    // width: 0;
+    // height: 0;
+    display: none;
+
+    // transition: all 3s ease;
     // position: absolute; /* Размещаем картинку относительно окна */
     // top: 0; /* Выровнять сверху */
     // left: 0; /* Выровнять слева */
-    object-fit: cover; /* Картинка заполняет пространство, сохраняя пропорции */
-    z-index: -1;
+    // object-fit: cover; /* Картинка заполняет пространство, сохраняя пропорции */
+    // z-index: -1;
     // padding-top: 17.5rem;
     // padding-bottom: 20.75rem;
-    &.active {
-      width: 100%; /* Задаем ширину 100% от ширины экрана */
-      height: 100vh; /* Задаем высоту 100% от высоты экрана */
-    }
+    // &.active {
+    //   width: 100%; /* Задаем ширину 100% от ширины экрана */
+    //   height: 100vh; /* Задаем высоту 100% от высоты экрана */
+    // }
   }
-  &__bg--1 {
-    background-image: url(./assests/header/headerMain/background.jpg);
+  &__bg--1,
+  &__bg--2,
+  &__bg--3,
+  &__bg--4 {
     background-size: cover; /* Заполняет весь экран, обрезая изображение по необходимости */
     background-position: 72% 50%; /* Центрирует изображение */
     background-repeat: no-repeat; /* Не повторяет изображение */
+    // opacity: 1;
+    // visibility: visible;
+    width: auto;
+    height: 100vh;
+    display: block;
     // background-attachment: fixed; /* Фиксирует фоновое изображение при прокрутке */
+    animation: bgSize 1s;
+    // animation-delay: 1s;
+  }
+  &__bg--1 {
+    background-image: url(./assests/header/headerMain/back1.jpg);
+  }
+  &__bg--2 {
+    background-image: url(./assests/header/headerMain/back2.jpg);
+  }
+  &__bg--3 {
+    background-image: url(./assests/header/headerMain/back3.jpg);
+  }
+  &__bg--4 {
+    background-image: url(./assests/header/headerMain/back4.jpg);
   }
   &__text {
     grid-row: 2 / 3;
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
-    gap: 3.5rem;
     height: 100%;
   }
   &__title {
     max-width: 49.5rem;
+    display: none;
+    &--active {
+      display: inline;
+    }
+    &--hidden {
+      display: none;
+    }
 
     & i {
       font-style: normal;
@@ -57,10 +89,26 @@
     }
   }
   &__sub-title {
+    margin-top: 3.5rem;
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
+    display: none;
+    // opacity: 0;
+    // padding: 0;
+    // margin: 0;
+    // visibility: hidden;
+    // transition: opacity 2s ease, visibility 0s; /* Плавный переход opacity, задержка для visibility */
+    animation-name: appearance;
+    animation-duration: 1s;
+    &--active {
+      display: inline;
+      // opacity: 1; /* Когда элемент становится видимым */
+      // visibility: visible; /* Делаем элемент видимым */
+      // transition: opacity 2s ease, visibility 0s; /* Плавный переход, без задержки для visibility */
+    }
   }
+
   &__sub-title span {
     font-size: 3rem;
     line-height: 2.5rem;
@@ -139,5 +187,74 @@
         forwards
         cubic-bezier(0.11, 0, 0.5, 0);
     }
+  }
+}
+
+// .header__bg.active {
+//   opacity: 1;
+//   visibility: visible;
+//   animation: scale-bg 2s forwards; /* Анимация масштабирования */
+// }
+
+// @keyframes scale-bg {
+//   0% {
+//     background-size: 120%; /* Начальный размер фона (увеличенный) */
+//     opacity: 0; /* Прозрачность на старте */
+//   }
+//   50% {
+//     background-size: 130%; /* Увеличиваем размер фона */
+//     opacity: 0.5; /* Прозрачность на середине */
+//   }
+//   100% {
+//     background-size: 100%; /* Финальный размер фона (нормальный) */
+//     opacity: 1; /* Полная непрозрачность */
+//   }
+// }
+// @keyframes scale-bg {
+//   0% {
+//     // transform: scale(1.2); /* Начальное увеличение */
+//     opacity: 0; /* Прозрачность на старте */
+//   }
+//   50% {
+//     // transform: scale(1.2); /* Сохраняем увеличенный размер */
+//     opacity: 0.5; /* Полупрозрачный фон */
+//   }
+//   100% {
+//     // transform: scale(1); /* Возвращаем фон к нормальному размеру */
+//     opacity: 1; /* Полная непрозрачность */
+//   }
+// }
+
+// .header__bg {
+//   animation: scale-bg 0.8s ease; /* Добавляем анимацию */
+//   // background-size: cover; /* Используем cover */
+//   // background-position: center center; /* Центрируем фон */
+// }
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+    margin-left: -100%;
+    margin-right: 100%;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@keyframes bgSize {
+  0% {
+    transform: scale(0.8);
+    // background-size: 200%;
+  }
+  // 50% {
+  //   transform: scale(1.2);
+  //   // background-size: 150%;
+  // }
+  100% {
+    transform: scale(1);
+    // background-size: cover;
   }
 }
