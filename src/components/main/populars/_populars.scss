@@ -28,14 +28,86 @@
     background-color: color.$tertiary;
     z-index: -1;
   }
+  &__filter {
+    position: absolute;
+    right: 0;
+    max-width: 13.25rem;
+    height: 30.875rem;
+    z-index: -1;
 
+    // z-index: 1;
+  }
   &__card {
     padding-left: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px color.$border solid;
+    position: relative;
+    height: 30.875rem;
+    &:first-child {
+      .populars__filter::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("./assests/main/populars/compas.png") no-repeat center
+          center;
+        background-size: cover;
+        opacity: 1; /* Начальная непрозрачность */
+        transition: opacity 1s ease; /* Плавное изменение прозрачности */
+      }
+    }
+    // &:first-child {
+    //   &:hover .populars__image {
+    //     // transition-delay: 1s;
+    //     /* Устанавливаем padding-left при ховере на первую карточку */
+    //   }
+    // }
+    &:first-child .populars__image {
+      // max-width: 22.375rem;
+      // // object-fit: none;
+      // object-position: 30% center;
+      // padding-left: 9.125rem;
+      // position: relative;
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   right: 0;
+      //   width: 10rem;
+      //   height: 10rem;
+      // }
+
+      // background-size: 100% 100%;
+    }
+
+    &:hover .populars__filter::after {
+      opacity: 0;
+      // , padding-left 0.5s ease 0.3s
+
+      //   background: linear-gradient(
+      //       90deg,
+      //       rgba(252, 242, 227, 1) 0%,
+      //       rgba(252, 242, 227, 0) 100%
+      //     ),
+      //     linear-gradient(
+      //       90deg,
+      //       rgba(255, 251, 245, 1) 0%,
+      //       rgba(255, 255, 255, 0) 100%
+      //     );
+    }
+    &:hover .populars__filter {
+      // , padding-left 0.5s ease 0.3s
+      max-width: 100%;
+      transition: max-width 3s ease-in-out, opacity 3s ease;
+    }
   }
+
   &__info {
     position: relative;
     height: 23.875rem;
@@ -92,25 +164,30 @@
       line-height: 4.6875rem;
     }
   }
-  &__card {
-    position: relative;
-    &:first-child .populars__image {
-      object-position: 30% center;
-    }
-  }
+  // &__card {
+  //   position: relative;
+
+  // }
   &__cards {
-    &:first-child {
-      background-color: black;
-    }
   }
   &__image {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    max-width: 13.25rem;
-    height: 30.875rem;
     width: 100%;
     object-fit: cover;
+    height: 100%;
+    // background: rgb(252,242,227);
+    // background: linear-gradient(90deg, rgba(252,242,227,1) 0%, rgba(252,242,227,0) 100%);
+    // background: rgb(255,251,245);
+    // background: linear-gradient(90deg, rgba(255,251,245,1) 0%, rgba(255,255,255,0) 100%);
+    // background: linear-gradient(
+    //     90deg,
+    //     rgba(252, 242, 227, 1) 0%,
+    //     rgba(252, 242, 227, 0) 100%
+    //   ),
+    //   linear-gradient(
+    //     90deg,
+    //     rgba(255, 251, 245, 1) 0%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
   }
   &__all-products {
     margin-top: 3.4375rem;
