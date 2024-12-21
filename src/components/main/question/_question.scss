@@ -3,6 +3,8 @@
 .question {
   display: flex;
   justify-content: center;
+  font-size: 7.65vw;
+  height: 2em;
   &__text {
     margin-top: 4rem; //УБРАТЬ
     color: color.$question;
@@ -10,7 +12,7 @@
     left: 0;
     width: 95vw;
     line-height: 1em;
-    font-size: 7.65vw;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: 1%;
     text-wrap: nowrap;
