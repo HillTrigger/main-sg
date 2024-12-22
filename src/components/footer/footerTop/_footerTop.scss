@@ -73,59 +73,7 @@
     }
   }
   &__contacts {
-    padding-top: 0.5625rem;
-    position: relative;
     grid-column: 5 / 6;
-  }
-  &__contact-tel {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1rem;
-    &:nth-child(2) {
-      padding-bottom: 0.8125rem;
-    }
-    a {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      font-weight: 600;
-    }
-    span {
-      color: color.$text-secondary;
-    }
-  }
-
-  &__contact-email {
-    font-size: 1rem;
-    line-height: 2rem;
-    font-weight: 500;
-    color: #000000;
-  }
-
-  &__btn {
-    position: absolute;
-    bottom: 0;
-    width: 14.25rem;
-    height: 3rem;
-    background-color: color.$background;
-    border-radius: 100px;
-    border: 1px color.$primary solid;
-    font-size: 0.75rem;
-    line-height: 1.125rem;
-    font-weight: 600;
-
-    background-image: linear-gradient(transparent 50%, color.$primary 50%);
-    background-size: 200% 200%;
-    transition: 0.2s;
-    &:hover {
-      color: color.$background;
-      background-position: 0 100%;
-    }
-  }
-
-  .footer__link {
-    transition: color 0.3s ease;
-    &:hover {
-      color: color.$primary;
-    }
+    padding-top: 0.5625rem;
   }
 }

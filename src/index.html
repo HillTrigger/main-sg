@@ -77,11 +77,37 @@
               </svg>
             </a>
             <button class="header__dropdown">
-              Связаться<img
+              Связаться<svg
                 class="header__dropdown-arrow"
-                src="./assests/header/headerTop/downArrow.svg"
-                alt=""
-              />
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 8.25L9 3.75L3 3.75L6 8.25Z" fill="currentColor" />
+              </svg>
+
+              <div class="header__contacts contacts hidden">
+                <div class="contacts__tel">
+                  <a class="contacts__link" href="tel:+78002507015">
+                    8 800 250 7015
+                  </a>
+                  <span>Бесплатно по России</span>
+                </div>
+                <div class="contacts__tel">
+                  <a class="contacts__link" href="tel:+74952287015">
+                    8 495 228 7015
+                  </a>
+                  <span>Для звонков по Москве</span>
+                </div>
+                <div class="contacts__email">
+                  <a class="contacts__link" href="mailto:am.solid@solid-mn.ru">
+                    am.solid@solid-mn.ru
+                  </a>
+                </div>
+                <a class="contacts__btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</a>
+              </div>
             </button>
             <a class="header__flag">
               <img src="./assests/header/headerTop/ruFlag.svg" alt="flag" />
@@ -649,25 +675,25 @@
               <a href="#" class="footer__navbar-link">Раскрытие информации</a>
               <a href="#" class="footer__navbar-link">Контакты</a>
             </div>
-            <div class="footer__contacts">
-              <div class="footer__contact-tel">
-                <a class="footer__link" href="tel:+78002507015">
+            <div class="footer__contacts contacts">
+              <div class="contacts__tel">
+                <a class="contacts__link" href="tel:+78002507015">
                   8 800 250 7015
                 </a>
                 <span>Бесплатно по России</span>
               </div>
-              <div class="footer__contact-tel">
-                <a class="footer__link" href="tel:+74952287015">
+              <div class="contacts__tel">
+                <a class="contacts__link" href="tel:+74952287015">
                   8 495 228 7015
                 </a>
                 <span>Для звонков по Москве</span>
               </div>
-              <div class="footer__contact-email">
-                <a class="footer__link" href="mailto:am.solid@solid-mn.ru">
+              <div class="contacts__email">
+                <a class="contacts__link" href="mailto:am.solid@solid-mn.ru">
                   am.solid@solid-mn.ru
                 </a>
               </div>
-              <button class="footer__btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+              <button class="contacts__btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
             </div>
           </div>
         </div>
