@@ -1,6 +1,46 @@
 @use "@/styles/color";
 
 .populars {
+  &__buble {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    max-width: 16rem;
+    padding: 0 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.8125rem;
+    background-color: color.$background;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    top: -86px;
+    left: -33px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease; /* Убираем задержку для visibility */
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 90%;
+      left: 45%;
+      transform: rotate(-90deg);
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-right: 13px solid color.$background;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+      border-bottom: 12px solid transparent;
+      z-index: -1;
+    }
+  }
+  .populars__info-svg:hover ~ .populars__buble {
+    opacity: 1;
+    visibility: visible;
+  }
+  .populars__info-svg {
+    color: color.$secondary;
+  }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -56,6 +96,18 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    position: relative;
+
+    // &::before {
+    //   content: "Открытый паевый инвестиционный фонд рыночных финансовых инструментов";
+
+    //   position: absolute;
+
+    //   top: -77px;
+    //   left: -29px;
+
+    //   z-index: 1;
+    // }
   }
   &__title {
     font-size: 2.25rem;
