@@ -134,10 +134,12 @@
     background-color: color.$background;
     border: 1px color.$primary solid;
     text-transform: uppercase;
-
+    background-image: linear-gradient(transparent 50%, color.$primary 50%);
+    background-size: 200% 200%;
+    transition: 0.2s;
     &:hover {
-      background-color: color.$primary;
-      background-size: 5%;
+      color: color.$background;
+      background-position: 0 100%;
     }
   }
   &__btns-wrapper {
