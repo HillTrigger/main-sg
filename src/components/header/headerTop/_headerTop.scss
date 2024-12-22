@@ -2,25 +2,29 @@
 
 .header {
   &__top {
-    transition: opacity 0.3s ease, height 0.3s ease, padding 0.3s ease,
-      margin 0.3s ease, background-color 0.3s ease;
-    opacity: 1; /* Элемент по умолчанию видим */
-    visibility: visible; /* Элемент по умолчанию видим */
-    // transition: background-color 0.8s ease;
-    // display: flex;
+    z-index: 100;
     position: fixed;
     width: 100%;
-    display: grid;
-    grid-template-columns:
-      179px /* первый контейнер: фиксированный */
-      minmax(0, 0.095fr) /* второй контейнер: 130px уменьшается */
-      663px /* третий контейнер: фиксированный */
-      1fr /* четвёртый контейнер: 598px уменьшается */
-      256px; /* пятый контейнер: фиксированный */
-    padding: 0 4.375rem;
-    align-items: center;
-    z-index: 100;
-    // justify-content: space-between;
+    &-inner {
+      transition: opacity 0.3s ease;
+      // , height 0.3s ease, padding 0.3s ease,
+      //   margin 0.3s ease, background-color 0.3s ease
+      opacity: 1; /* Элемент по умолчанию видим */
+      visibility: visible; /* Элемент по умолчанию видим */
+      // transition: background-color 0.8s ease;
+      // display: flex;
+
+      display: grid;
+      grid-template-columns:
+        179px /* первый контейнер: фиксированный */
+        minmax(0, 0.095fr) /* второй контейнер: 130px уменьшается */
+        663px /* третий контейнер: фиксированный */
+        1fr /* четвёртый контейнер: 598px уменьшается */
+        256px; /* пятый контейнер: фиксированный */
+      padding: 0 4.375rem;
+      align-items: center;
+      // justify-content: space-between;
+    }
   }
   &__logo {
     width: 179px;
@@ -84,6 +88,7 @@
     cursor: pointer;
     gap: 3px;
     position: relative;
+    background-color: transparent;
   }
   &__dropdown-arrow--open {
     transform: scale(1, -1);
@@ -96,9 +101,40 @@
     position: absolute;
     top: 2.125rem;
     left: -11.5625rem;
-    background-color: color.$background !important;
+    background-color: color.$background;
     z-index: 1;
     width: 19.1875rem;
     padding: 1.75rem 2.5rem;
+  }
+
+  &__top-input {
+    height: 4rem;
+    width: 100%;
+    padding: 0 4.375rem;
+    background-color: color.$background;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__search-input {
+    border: 1px black solid;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 100%;
+    border: none;
+  }
+  .header__search-start {
+    width: 9rem;
+    height: 2.5rem;
+  }
+  .header__search-btns {
+    display: flex;
+    align-items: center;
+    gap: 2.0875rem;
+  }
+  &__search-close {
+    display: inline-block;
+    // border: 1px black solid;
+    cursor: pointer;
   }
 }

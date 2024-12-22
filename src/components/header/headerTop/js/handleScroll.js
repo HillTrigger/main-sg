@@ -1,5 +1,6 @@
 let lastScrollTop = 0; // Запоминаем предыдущую позицию прокрутки
 let headerTop = document.querySelector(".header__top");
+let headerTopInner = document.querySelector(".header__top-inner");
 
 export function handleScroll() {
   /*  НАСТРОЙКИ ВИДИМОСТИ HEADER TOP */
@@ -17,11 +18,14 @@ export function handleScroll() {
   lastScrollTop = currentScroll;
 
   if (currentScroll > 0) {
-    headerTop.style.backgroundColor = "white";
+    headerTopInner.style.backgroundColor = "white";
   } else {
-    headerTop.style.backgroundColor = "transparent";
+    headerTopInner.style.backgroundColor = "transparent";
   }
 
   /*  НАСТРОЙКИ ВИДИМОСТИ HEADER CONTACTS */
   document.querySelector(".header__contacts").classList.add("hidden");
+  document
+    .querySelector(".header__dropdown-arrow")
+    .classList.remove("header__dropdown-arrow--open");
 }

@@ -3,9 +3,9 @@
 .header {
   background-color: #fbf2e3;
 
-  & * {
-    background-color: transparent;
-  }
+  // & * {
+  //   background-color: transparent;
+  // }
   &__inner {
     display: grid;
     grid-template-rows: calc(280 / 612 * 1fr) 368px calc(332 / 612 * 1fr);
