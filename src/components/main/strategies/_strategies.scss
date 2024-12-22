@@ -75,11 +75,11 @@
     // }
 
     &:hover .strategies__btn {
-      transition: bottom 1s ease;
+      transition: bottom 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99);
       bottom: 2.5rem;
     }
     &:hover .strategies__image {
-      transition: margin 2s ease;
+      transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
       margin-bottom: -6rem;
       // margin-top: 6rem;
     }
@@ -87,7 +87,7 @@
       // transition: height 5s ease;
       // transition-delay: 2s;
       // height: 100%;
-      transition: opacity 2s ease;
+      transition: opacity 2s cubic-bezier(0.25, 0.74, 0.22, 0.99);
       opacity: 1;
       visibility: visible;
     }

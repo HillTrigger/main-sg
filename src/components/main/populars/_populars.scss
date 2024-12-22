@@ -34,83 +34,11 @@
     max-width: 13.25rem;
     height: 30.875rem;
     z-index: -1;
-
-    // z-index: 1;
   }
-  &__card {
-    padding-left: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px color.$border solid;
-    position: relative;
-    height: 30.875rem;
-    &:first-child {
-      .populars__filter::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("./assests/main/populars/compas.png") no-repeat center
-          center;
-        background-size: cover;
-        opacity: 1; /* Начальная непрозрачность */
-        transition: opacity 1s ease; /* Плавное изменение прозрачности */
-      }
-    }
-    // &:first-child {
-    //   &:hover .populars__image {
-    //     // transition-delay: 1s;
-    //     /* Устанавливаем padding-left при ховере на первую карточку */
-    //   }
-    // }
-    &:first-child .populars__image {
-      // max-width: 22.375rem;
-      // // object-fit: none;
-      // object-position: 30% center;
-      // padding-left: 9.125rem;
-      // position: relative;
-      // &::before {
-      //   content: "";
-      //   position: absolute;
-      //   top: 0;
-      //   bottom: 0;
-      //   left: 0;
-      //   right: 0;
-      //   width: 10rem;
-      //   height: 10rem;
-      // }
-
-      // background-size: 100% 100%;
-    }
-
-    &:hover .populars__filter::after {
-      opacity: 0;
-      // , padding-left 0.5s ease 0.3s
-
-      //   background: linear-gradient(
-      //       90deg,
-      //       rgba(252, 242, 227, 1) 0%,
-      //       rgba(252, 242, 227, 0) 100%
-      //     ),
-      //     linear-gradient(
-      //       90deg,
-      //       rgba(255, 251, 245, 1) 0%,
-      //       rgba(255, 255, 255, 0) 100%
-      //     );
-    }
-    &:hover .populars__filter {
-      // , padding-left 0.5s ease 0.3s
-      max-width: 100%;
-      transition: max-width 3s ease-in-out, opacity 3s ease;
-    }
-  }
-
   &__info {
     position: relative;
-    height: 23.875rem;
+    // height: 23.875rem;
+    height: 100%;
     width: 100%;
     // padding: 3.5rem;
     // padding-right: 7.6875rem;
@@ -139,13 +67,16 @@
   &__SCHA {
     margin-bottom: 0.4375rem;
   }
+  &__PAI {
+    // padding-bottom: 5.6875rem;
+    // padding-bottom: 10.25rem;
+  }
   &__SCHA,
   &__PAI {
     color: color.$text-muted;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
-
     i {
       color: color.$text-primary;
       font-weight: 600;
@@ -154,8 +85,11 @@
   }
 
   &__percent {
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
+    // padding-bottom: 1rem;
+    // margin-bottom: 1rem;
+
     i {
       color: color.$secondary;
       font-style: normal;
@@ -200,5 +134,149 @@
     background-color: color.$background;
     border: 1px color.$primary solid;
     text-transform: uppercase;
+
+    &:hover {
+      background-color: color.$primary;
+      background-size: 5%;
+    }
+  }
+  &__btns-wrapper {
+    position: absolute;
+    bottom: 0;
+  }
+  &__btns {
+    display: flex;
+    gap: 1.25rem;
+    // position: absolute;
+    // bottom: 0;
+    margin-top: 0rem;
+    max-height: 0rem;
+    overflow: hidden;
+  }
+  &__buy,
+  &__more {
+    width: 13.25rem;
+    height: 3.5rem;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+  }
+  &__buy {
+    color: color.$background;
+    background-color: color.$primary;
+  }
+  &__more {
+    background-color: color.$background;
+  }
+  // z-index: 1;
+
+  &__card {
+    padding: 3.5rem;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px color.$border solid;
+    position: relative;
+    height: 30.875rem;
+
+    &-info {
+      height: 100%;
+      max-width: 23.3125rem;
+    }
+
+    &:nth-child(1) {
+      .populars__filter::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("./assests/main/populars/compas.png") no-repeat center
+          center;
+        background-size: cover;
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
+    }
+    &:nth-child(2) {
+      .populars__filter::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("./assests/main/populars/planer.png") no-repeat center
+          center;
+        background-size: cover;
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
+    }
+    &:nth-child(3) {
+      .populars__filter::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("./assests/main/populars/keys.jpg") no-repeat center
+          center;
+        background-size: cover;
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
+    }
+    &:nth-child(4) {
+      .populars__filter::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("./assests/main/populars/vanil.png") no-repeat center
+          center;
+        background-size: cover;
+        opacity: 1;
+        transition: opacity 1s ease;
+      }
+    }
+
+    &:hover .populars__filter::after {
+      opacity: 0;
+    }
+
+    &:hover .populars__filter {
+      max-width: 100%;
+      transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+        opacity 1s ease;
+    }
+
+    &:hover .populars__btns {
+      margin-top: 1rem;
+      max-height: 3.5rem;
+      transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+        max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+    }
+
+    /* Это свойство для восстановления начальных состояний при убирании мышки */
+    .populars__filter {
+      max-width: 13.3125rem;
+      transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+        opacity 1s ease;
+    }
+
+    .populars__btns {
+      margin-top: 0;
+      max-height: 0;
+      transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+        max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+    }
   }
 }
