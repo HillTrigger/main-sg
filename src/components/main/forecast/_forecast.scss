@@ -29,6 +29,14 @@
     height: 4.5rem;
     border: 1px color.$text-muted2 solid;
     border-radius: 50%;
+    transition: color 0.3s ease, border 0.3s ease;
+    &:not(.swiper-button-disabled) {
+      color: black;
+    }
+    &:hover:not(.swiper-button-disabled) {
+      border-color: black;
+      color: color.$primary;
+    }
   }
   &__cards {
     margin-left: -29.5rem;
