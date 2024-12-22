@@ -47,6 +47,13 @@
     height: 3rem;
     border: 1px color.$question solid;
     border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: black;
+      color: color.$primary;
+    }
   }
 
   &__navbar {
@@ -55,11 +62,14 @@
     gap: 1.75rem;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
+    transition: all 0.4s ease;
 
     grid-column: 3 / 4;
-    &-link:hover {
+    &-link {
       transition: all 0.4s ease;
-      color: color.$primary;
+      &:hover {
+        color: color.$primary;
+      }
     }
   }
   &__contacts {
@@ -102,5 +112,20 @@
     font-size: 0.75rem;
     line-height: 1.125rem;
     font-weight: 600;
+
+    background-image: linear-gradient(transparent 50%, color.$primary 50%);
+    background-size: 200% 200%;
+    transition: 0.2s;
+    &:hover {
+      color: color.$background;
+      background-position: 0 100%;
+    }
+  }
+
+  .footer__link {
+    transition: color 0.3s ease;
+    &:hover {
+      color: color.$primary;
+    }
   }
 }
