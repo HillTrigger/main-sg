@@ -1,0 +1,28 @@
+@use "@/styles/color";
+.button {
+  width: 13.25rem;
+  height: 3.5rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  &--red {
+    color: color.$background;
+    background-color: color.$primary;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: color.$dark-primary;
+    }
+  }
+  &--white {
+    color: color.$text-primary;
+    background-color: color.$background;
+    border: 2px color.$background solid;
+    transition: color 0.3s ease, border 0.3s ease;
+    &:hover {
+      color: #846950;
+      border-color: #846950;
+    }
+  }
+}

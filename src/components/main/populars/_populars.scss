@@ -155,23 +155,7 @@
     max-height: 0rem;
     overflow: hidden;
   }
-  &__buy,
-  &__more {
-    width: 13.25rem;
-    height: 3.5rem;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    text-transform: uppercase;
-  }
-  &__buy {
-    color: color.$background;
-    background-color: color.$primary;
-  }
-  &__more {
-    background-color: color.$background;
-  }
+
   // z-index: 1;
 
   &__card {

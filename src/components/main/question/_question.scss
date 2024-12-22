@@ -17,18 +17,13 @@
     letter-spacing: 1%;
     text-wrap: nowrap;
     cursor: default;
-    &::before {
-      content: "";
-      position: absolute;
-      font-size: 1.8em;
-      top: -14%;
-      left: 63.2%;
-      width: 0.28em;
-      height: 0.28em;
-      background: no-repeat url(@/assests/main/question/arrow.svg) center center;
-      background-color: color.$primary;
-      border-radius: 50%;
-      cursor: pointer;
-    }
+  }
+  &__next-btn {
+    position: absolute;
+    font-size: 1.8em;
+    top: -14%;
+    left: 63.2%;
+    width: 0.28em;
+    height: 0.28em;
   }
 }

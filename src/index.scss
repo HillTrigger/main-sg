@@ -1,6 +1,9 @@
 @use "./styles/global";
+
 @use "./components/ui/checkbox";
 @use "./components/ui/switch";
+@use "./components/ui/next-btn";
+@use "./components/ui/button";
 @use "./components/header/header";
 @use "./components/main/main";
 @use "./components/footer/footer";
