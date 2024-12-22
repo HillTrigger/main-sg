@@ -1,20 +1,32 @@
 @use "@/styles/color";
-
 .strategies {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+
   &__title {
     font-size: 4rem;
     width: 56.75rem;
     font-weight: 600;
     line-height: 5rem;
     span {
-      // color: red;
       position: relative;
       z-index: 0;
     }
   }
+
+  &__desc {
+    padding-top: 1rem;
+    padding: 0 2.5rem;
+    font-weight: 300;
+    color: color.$text-muted;
+    opacity: 0;
+    visibility: hidden; // Можно оставить, если нужно скрывать элемент
+    overflow: hidden;
+    line-height: 1.5rem;
+    transition: opacity 2s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  }
+
   &__line {
     position: absolute;
     bottom: 0rem;
@@ -24,10 +36,12 @@
     background-color: color.$tertiary;
     z-index: -1;
   }
+
   &__cards {
     display: flex;
     gap: 1.25rem;
   }
+
   &__btn {
     position: absolute;
     bottom: -4.5rem;
@@ -38,14 +52,16 @@
     background-color: color.$primary;
     border-radius: 50%;
     cursor: pointer;
+    transition: bottom 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+      background-color 0.5s ease !important;
 
     &:hover {
-      transition: background-color 0.5s ease !important;
       background-color: #9f0056;
+      bottom: 2.5rem;
     }
   }
+
   &__card {
-    // outline: 1px black solid;
     background-color: color.$surface;
     color: color.$text-surface;
     position: relative;
@@ -60,60 +76,31 @@
     line-height: 2rem;
     font-weight: 500;
     overflow: hidden;
-    // transition: all 0.5s ease;
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   bottom: -4.5rem;
-    //   left: 2.5rem;
-    //   width: 4.5rem;
-    //   height: 4.5rem;
-    //   background: no-repeat url(@/assests/main/question/arrow.svg) center center;
-    //   background-color: color.$primary;
-    //   border-radius: 50%;
-    //   cursor: pointer;
-    // }
+    transition: all 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 
-    &:hover .strategies__btn {
-      transition: bottom 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-      bottom: 2.5rem;
-    }
-    &:hover .strategies__image {
-      transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-      margin-bottom: -6rem;
-      // margin-top: 6rem;
-    }
-    &:hover .strategies__desc {
-      // transition: height 5s ease;
-      // transition-delay: 2s;
-      // height: 100%;
-      transition: opacity 2s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-      opacity: 1;
-      visibility: visible;
+    &:hover {
+      .strategies__btn {
+        bottom: 2.5rem; // Отображение кнопки при наведении
+      }
+
+      .strategies__image {
+        margin-bottom: -6rem; // Двигаем изображение вниз при наведении
+      }
+
+      .strategies__desc {
+        opacity: 1; // Плавное появление описания
+        visibility: visible;
+      }
     }
   }
 
   &__name {
-    // max-width: 22.75rem;
     padding: 0 2.5rem;
     padding-top: 3rem;
   }
-  &__desc {
-    padding-top: 1rem;
-    padding: 0 2.5rem;
-    font-weight: 300;
-    color: color.$text-muted;
-    // height: 1px;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    line-height: 1.5rem;
-  }
+
   &__image {
     width: 100%;
-    // outline: 1px red solid;
-    // position: absolute;
-    // bottom: 0;
-    // right: 0;
+    transition: margin-bottom 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
   }
 }
