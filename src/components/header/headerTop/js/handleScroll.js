@@ -18,8 +18,10 @@ export function handleScroll() {
 
   if (currentScroll > 0) {
     headerTopInner.style.backgroundColor = "white";
+    headerTopInner.style.borderBottom = "1px #e0e0e0 solid";
   } else {
     headerTopInner.style.backgroundColor = "transparent";
+    headerTopInner.style.borderBottom = "none";
   }
 
   closeContacts();

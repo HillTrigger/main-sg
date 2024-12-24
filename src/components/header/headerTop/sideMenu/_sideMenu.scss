@@ -1,0 +1,21 @@
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 5rem;
+  z-index: -1;
+  width: 22.5rem;
+  background-color: white;
+
+  &__navbar {
+  }
+
+  &__navbar-link {
+    display: flex;
+    flex-direction: column;
+  }
+}

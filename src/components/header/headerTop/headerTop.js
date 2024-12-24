@@ -42,3 +42,13 @@ document.addEventListener("click", function (e) {
     closeSearchInput();
   }
 });
+
+// header__burger--active
+
+const burgerBtn = document.querySelector(".header__burger");
+
+burgerBtn.addEventListener("click", (e) => {
+  if (burgerBtn.contains(e.target)) {
+    burgerBtn.classList.toggle("header__burger--active");
+  }
+});
