@@ -115,7 +115,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px #e0e0e0 solid;
+    border-bottom: 1px #e0e0e0 solid;
+    transition: opacity 1s ease;
+    opacity: 0;
+    visibility: hidden;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
   }
+
   &__search-input {
     border: 1px black solid;
     font-size: 0.875rem;
@@ -131,6 +142,11 @@
     display: flex;
     align-items: center;
     gap: 2.0875rem;
+  }
+  .header__search-start {
+    font-weight: 600;
+    font-size: 0.625rem;
+    line-height: 1rem;
   }
   &__search-close {
     display: inline-block;
