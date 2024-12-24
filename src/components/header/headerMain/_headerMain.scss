@@ -3,52 +3,30 @@
 .header {
   background-color: #fbf2e3;
 
-  // & * {
-  //   background-color: transparent;
-  // }
   &__inner {
     display: grid;
     grid-template-rows: calc(280 / 612 * 1fr) 368px calc(332 / 612 * 1fr);
     position: relative;
     max-width: 85.75rem;
-    height: 100%;
     margin: 0 auto;
+    position: relative;
+    width: auto;
+    height: 100vh;
   }
-  &__bg {
-    // opacity: 0;
-    // visibility: hidden;
-    // width: 0;
-    // height: 0;
-    display: none;
 
-    // transition: all 3s ease;
-    // position: absolute; /* Размещаем картинку относительно окна */
-    // top: 0; /* Выровнять сверху */
-    // left: 0; /* Выровнять слева */
-    // object-fit: cover; /* Картинка заполняет пространство, сохраняя пропорции */
-    // z-index: -1;
-    // padding-top: 17.5rem;
-    // padding-bottom: 20.75rem;
-    // &.active {
-    //   width: 100%; /* Задаем ширину 100% от ширины экрана */
-    //   height: 100vh; /* Задаем высоту 100% от высоты экрана */
-    // }
-  }
   &__bg--1,
   &__bg--2,
   &__bg--3,
   &__bg--4 {
-    background-size: cover; /* Заполняет весь экран, обрезая изображение по необходимости */
-    background-position: 72% 50%; /* Центрирует изображение */
-    background-repeat: no-repeat; /* Не повторяет изображение */
-    // opacity: 1;
-    // visibility: visible;
-    width: auto;
-    height: 100vh;
-    display: block;
-    // background-attachment: fixed; /* Фиксирует фоновое изображение при прокрутке */
+    background-size: cover;
+    background-position: 72% 50%;
+    background-repeat: no-repeat;
     animation: bgSize 0.8s;
-    // animation-delay: 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
   }
   &__bg--1 {
     background-image: url(./assests/header/headerMain/back1.jpg);
@@ -94,6 +72,7 @@
     font-size: 1rem;
     line-height: 1.5rem;
     display: none;
+    position: relative;
     // opacity: 0;
     // padding: 0;
     // margin: 0;
