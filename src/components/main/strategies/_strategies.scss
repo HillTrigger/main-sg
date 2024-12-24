@@ -13,6 +13,11 @@
       position: relative;
       z-index: 0;
     }
+    opacity: 0;
+    transition: opacity 1s ease;
+    &.element-show {
+      opacity: 1;
+    }
   }
 
   &__desc {
@@ -34,6 +39,14 @@
     width: 26.375rem;
     background-color: color.$tertiary;
     z-index: -1;
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s,
+      opacity 0s ease 0.5s;
+    transform: translateX(200%) translateY(200%);
+    &.element-show {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   &__cards {
@@ -63,7 +76,24 @@
     font-weight: 500;
     overflow: hidden;
     transition: all 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-
+    opacity: 0;
+    transform: scaleY(100%);
+    &.element-show {
+      opacity: 1;
+      transform: none;
+      &:nth-child(1) {
+        transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.3s,
+          transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 1s;
+      }
+      &:nth-child(2) {
+        transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s,
+          transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 1.2s;
+      }
+      &:nth-child(3) {
+        transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.7s,
+          transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 1.4s;
+      }
+    }
     &:hover {
       .strategies__btn {
         bottom: 2.5rem; // Отображение кнопки при наведении

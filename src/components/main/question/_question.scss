@@ -5,6 +5,16 @@
   justify-content: center;
   font-size: 7.65vw;
   height: 2em;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+
+  &.element-show {
+    opacity: 1;
+    transform: none;
+  }
   &__text {
     margin-top: 4rem;
     color: color.$question;

@@ -9,6 +9,16 @@
   background: url(@/assests/main/subscribe/leftBack.png) left bottom no-repeat,
     url(@/assests/main/subscribe/rightBack.png) right top no-repeat;
   background-color: color.$surface;
+
+  opacity: 0;
+  transform: translateY(100%) !important;
+  transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+
+  &.element-show {
+    opacity: 1;
+    transform: none !important;
+  }
   &__form {
     width: 100%;
     padding: 5.5rem 0;

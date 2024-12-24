@@ -6,6 +6,15 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4.5rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+      transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+
+    &.element-show {
+      opacity: 1;
+      transform: none;
+    }
   }
   &__title {
     font-size: 4rem;
@@ -46,6 +55,15 @@
     // max-width: 26.75rem;
     height: 19.5rem;
     position: relative;
+    opacity: 0;
+    transform: translateY(100%) !important;
+    transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+      transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+
+    &.element-show {
+      opacity: 1;
+      transform: none !important;
+    }
   }
   &__tag {
     color: color.$text-secondary;
