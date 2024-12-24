@@ -8,8 +8,6 @@ new Odometer({
   theme: "default",
 });
 
-document.querySelector(".odometor-stats--1").innerHTML = 25;
-
 new Odometer({
   el: document.querySelector(".odometor-stats--2"),
   value: 9,
@@ -17,13 +15,9 @@ new Odometer({
   theme: "default",
 });
 
-document.querySelector(".odometor-stats--2").innerHTML = 1.2;
-
 new Odometer({
   el: document.querySelector(".odometor-stats--3"),
   value: 111,
   format: "(,ddd)",
   theme: "default",
 });
-
-document.querySelector(".odometor-stats--3").innerHTML = 378;

@@ -1,7 +1,24 @@
 function onEntry(entry) {
   entry.forEach((change) => {
     if (change.isIntersecting) {
-      change.target.classList.add("element-show");
+      let element = change.target;
+      element.classList.add("element-show");
+      if (element.classList.contains("stats__stat")) {
+        console.log(element);
+        switch (+element.dataset.index) {
+          case 1:
+            element.querySelector(".odometor-stats--1").innerHTML = 25;
+            return;
+          case 2:
+            element.querySelector(".odometor-stats--2").innerHTML = 1.2;
+            break;
+          case 3:
+            element.querySelector(".odometor-stats--3").innerHTML = 378;
+            return;
+          default:
+            return;
+        }
+      }
     }
   });
 }
