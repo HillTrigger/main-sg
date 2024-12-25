@@ -4,6 +4,8 @@ import { handleDropdown } from "./js/handleDropdown";
 import { handleScroll } from "./js/handleScroll";
 import { closeSearchInput } from "./js/closeSearchInput";
 import { closeContacts } from "./js/closeContacts";
+import { openSideBar } from "./js/openSideBar";
+import { closeSideBar } from "./js/closeSideBar";
 
 window.addEventListener("scroll", handleScroll); // УПРАВЛЕНИЕ ВИДИМОСТЬЮ HEADER TOP
 
@@ -34,6 +36,23 @@ closeSearchInputBtn.addEventListener("click", () => {
 });
 /* ======================= SEARCH INPUT ======================= */
 
+/* ======================= SIDE BAR MENU ======================= */
+
+const burgerBtn = document.querySelector(".header__burger");
+const sideMenu = document.querySelector(".header__side-menu");
+
+burgerBtn.addEventListener("click", (e) => {
+  if (burgerBtn.contains(e.target)) {
+    if (!burgerBtn.classList.contains("header__burger--active")) {
+      openSideBar();
+    } else {
+      closeSideBar();
+    }
+  }
+});
+
+/* ======================= SIDE BAR MENU ======================= */
+
 document.addEventListener("click", function (e) {
   if (!contacts.contains(e.target) && e.target !== dropdown) {
     closeContacts();
@@ -41,14 +60,7 @@ document.addEventListener("click", function (e) {
   if (!searchInput.contains(e.target) && !searchBtn.contains(e.target)) {
     closeSearchInput();
   }
-});
-
-// header__burger--active
-
-const burgerBtn = document.querySelector(".header__burger");
-
-burgerBtn.addEventListener("click", (e) => {
-  if (burgerBtn.contains(e.target)) {
-    burgerBtn.classList.toggle("header__burger--active");
+  if (!sideMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+    closeSideBar();
   }
 });

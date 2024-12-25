@@ -24,8 +24,11 @@
         256px; /* пятый контейнер: фиксированный */
       padding: 0 4.375rem;
       align-items: center;
-      border: 1px #e0e0e0 solid;
+      // border: 1px #e0e0e0 solid;
       // justify-content: space-between;
+      &--active {
+        /* STYLES IN SIDEMENU.SCSS */
+      }
     }
   }
   &__logo {
@@ -213,6 +216,9 @@
 }
 
 @media (max-width: 77.375rem) {
+  .header__side-menu {
+    display: flex;
+  }
   .header__top-inner {
     grid-template-columns: 6.4375rem 1fr 6.25rem;
     padding: 0;

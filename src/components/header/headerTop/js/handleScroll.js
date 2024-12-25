@@ -1,9 +1,12 @@
 import { closeContacts } from "./closeContacts";
 import { closeSearchInput } from "./closeSearchInput";
+import { closeSideBar } from "./closeSideBar";
 
 let lastScrollTop = 0; // Запоминаем предыдущую позицию прокрутки
 let headerTop = document.querySelector(".header__top");
 let headerTopInner = document.querySelector(".header__top-inner");
+
+const burgerBtn = document.querySelector(".header__burger");
 
 export function handleScroll() {
   let currentScroll = window.scrollY; // Текущая позиция прокрутки
@@ -17,13 +20,12 @@ export function handleScroll() {
   lastScrollTop = currentScroll;
 
   if (currentScroll > 0) {
-    headerTopInner.style.backgroundColor = "white";
-    headerTopInner.style.borderBottom = "1px #e0e0e0 solid";
-  } else {
-    headerTopInner.style.backgroundColor = "transparent";
-    headerTopInner.style.borderBottom = "none";
+    headerTopInner.classList.add("header__top-inner--active");
+  } else if (!burgerBtn.classList.contains("header__burger--active")) {
+    headerTopInner.classList.remove("header__top-inner--active");
   }
 
   closeContacts();
   closeSearchInput();
+  closeSideBar();
 }
