@@ -10,7 +10,7 @@
     max-width: 85.75rem;
     margin: 0 auto;
     position: relative;
-    width: auto;
+    width: 100vw;
     height: 100vh;
   }
 
@@ -102,7 +102,7 @@
     width: 100%;
     line-height: 2rem;
     font-weight: 400;
-
+    // padding: 0 2.5rem;
     &-page {
       display: inline-block;
       border-radius: 50%;
@@ -235,5 +235,24 @@
   100% {
     transform: scale(1);
     // background-size: cover;
+  }
+}
+
+@media (max-width: 77.375rem) {
+  .header {
+    &__bg--1,
+    &__bg--2,
+    &__bg--3,
+    &__bg--4 {
+      top: 40%; /* ПОМЕНЯТЬ */
+      height: 60%; /* ПОМЕНЯТЬ */
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1.125rem;
+      padding-top: 6.5rem;
+    }
   }
 }

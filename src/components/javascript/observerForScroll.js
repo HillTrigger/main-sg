@@ -4,7 +4,7 @@ function onEntry(entry) {
       let element = change.target;
       element.classList.add("element-show");
       if (element.classList.contains("stats__stat")) {
-        console.log(element);
+        // console.log(element);
         switch (+element.dataset.index) {
           case 1:
             element.querySelector(".odometor-stats--1").innerHTML = 25;
@@ -50,7 +50,7 @@ let elements = [
   document.querySelector(".main__subscribe"),
   document.querySelector(".main__question"),
 ];
-console.log(elements);
+// console.log(elements);
 for (let elm of elements) {
   observer.observe(elm);
 }
