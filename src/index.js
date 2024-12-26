@@ -8,5 +8,6 @@ import "./components/main/populars/populars";
 import "./components/main/forecast/forecast";
 import "./components/footer/footerMain/footerMain";
 import "./components/main/subscribe/subscribe";
+import "./components/footer/footer";
 
 import "./components/javascript/observerForScroll";

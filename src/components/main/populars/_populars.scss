@@ -202,7 +202,7 @@
       transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
       background-position 0.2s cubic-bezier(0.25, 0.74, 0.22, 0.99);
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(100%);
 
     &.element-show {
       opacity: 1;
@@ -236,7 +236,7 @@
     position: relative;
     // height: 30.875rem;
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(20%);
     transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
       opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 

@@ -16,7 +16,6 @@
     transform: none;
   }
   &__text {
-    margin-top: 4rem;
     color: color.$question;
     position: absolute;
     left: 0;
@@ -33,7 +32,24 @@
     font-size: 1.8em;
     top: -14%;
     left: 63.2%;
-    width: 0.28em;
-    height: 0.28em;
+    // width: 0.28em;
+    // height: 0.28em;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+.question__next-btn {
+}
+@media (max-width: 58.25rem) {
+  .question__next-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 40.4375rem) {
+  .question__next-btn {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
