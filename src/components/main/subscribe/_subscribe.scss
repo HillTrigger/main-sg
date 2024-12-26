@@ -1,20 +1,31 @@
 @use "@/styles/color";
 
 .subscribe {
+  // outline: 1px black solid;
   background-color: color.$surface;
   width: 100%;
-  height: 27.6875rem;
+  // height: 27.6875rem;
   padding-left: 3.6875rem;
   display: flex;
   background: url(@/assests/main/subscribe/leftBack.png) left bottom no-repeat,
-    url(@/assests/main/subscribe/rightBack.png) right top no-repeat;
-  background-color: color.$surface;
-
+    url(@/assests/main/subscribe/rightBack.png) right 2rem no-repeat;
+  // background-color: color.$surface;
   opacity: 0;
   transform: translateY(100%) !important;
   transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
     transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 
+  position: relative;
+  &::before {
+    content: ""; /* Псевдоэлемент */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100% - 2rem); /* Высота фона, сжимаемая на 2rem сверху */
+    background-color: color.$surface; /* Цвет фона */
+    z-index: -99999; /* Псевдоэлемент находится под контентом */
+  }
   &.element-show {
     opacity: 1;
     transform: none !important;
@@ -25,7 +36,9 @@
     padding-left: 4.0625rem;
   }
   &__image {
-    margin-top: -1.375rem;
+    // margin-top: -1.375rem;
+    max-width: 28.5rem;
+    width: 100%;
   }
   &__title {
     font-weight: 600;
@@ -102,5 +115,45 @@
     display: flex;
     cursor: pointer;
     gap: 0.5rem;
+  }
+}
+
+@media (max-width: 83.5rem) {
+  .subscribe {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.25rem;
+  }
+  .subscribe__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .subscribe__image {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+  .subscribe__settings {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .subscribe__desc {
+    margin-bottom: 0.75rem;
+  }
+  .subscribe__email {
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 33rem) {
+  .subscribe__email {
+    flex-direction: column;
+    gap: 1.125rem;
+  }
+  .subscribe__sumbit {
+    max-width: none;
+    width: 100%;
   }
 }

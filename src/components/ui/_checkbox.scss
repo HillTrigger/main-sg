@@ -1,5 +1,6 @@
 @use "@/styles/color";
 .checkbox {
+  text-wrap: nowrap;
 }
 
 /* Скрываем сам чекбокс */
@@ -11,13 +12,15 @@
 .checkbox__label {
   cursor: pointer;
   position: relative;
+  padding-left: 1.75rem;
 }
 /* Стили для метки перед чекбоксом */
 .checkbox__label::before {
   content: "";
   position: absolute;
   top: 1px;
-  left: -1.75rem;
+  // left: -1.75rem;
+  left: 0;
   display: inline-block;
   width: 1em;
   height: 1em;
