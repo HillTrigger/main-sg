@@ -43,8 +43,13 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(20.25rem, 1fr));
     gap: 1.25rem;
+
+    @media (max-width: 45.75rem) {
+      padding: 0 1.125rem;
+      grid-template-columns: repeat(1, minmax(20.25rem, 1fr));
+    }
   }
   &__main-title {
     font-weight: 600;
@@ -86,18 +91,14 @@
   &__filter {
     position: absolute;
     right: 0;
-    max-width: 13.25rem;
+    // max-width: 13.25rem;
     height: 30.875rem;
     z-index: -1;
   }
   &__info {
     position: relative;
-    // height: 23.875rem;
     height: 100%;
     width: 100%;
-    // padding: 3.5rem;
-    // padding-right: 7.6875rem;
-    // width: 18.1875rem;
 
     &-svg {
     }
@@ -112,17 +113,6 @@
     align-items: center;
     gap: 0.25rem;
     position: relative;
-
-    // &::before {
-    //   content: "Открытый паевый инвестиционный фонд рыночных финансовых инструментов";
-
-    //   position: absolute;
-
-    //   top: -77px;
-    //   left: -29px;
-
-    //   z-index: 1;
-    // }
   }
   &__title {
     font-size: 2.25rem;
@@ -155,7 +145,8 @@
     // position: absolute;
     // bottom: 0;
     // padding-bottom: 1rem;
-    // margin-bottom: 1rem;
+    margin-top: 4.5rem;
+    transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 
     i {
       color: color.$secondary;
@@ -169,12 +160,11 @@
   //   position: relative;
 
   // }
-  &__cards {
-  }
+
   &__image {
     width: 100%;
-    object-fit: cover;
     height: 100%;
+    object-fit: cover;
     // background: rgb(252,242,227);
     // background: linear-gradient(90deg, rgba(252,242,227,1) 0%, rgba(252,242,227,0) 100%);
     // background: rgb(255,251,245);
@@ -220,8 +210,9 @@
     }
   }
   &__btns-wrapper {
-    position: absolute;
-    bottom: 0;
+    margin-top: auto;
+    // position: absolute;
+    // bottom: 0;
   }
   &__btns {
     display: flex;
@@ -243,13 +234,16 @@
     justify-content: space-between;
     border: 1px color.$border solid;
     position: relative;
-    height: 30.875rem;
+    // height: 30.875rem;
     opacity: 0;
     transform: translateY(100%);
     transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
       opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 
+    overflow: hidden;
     &-info {
+      display: flex;
+      flex-direction: column;
       height: 100%;
       max-width: 23.3125rem;
     }
@@ -284,7 +278,8 @@
         bottom: 0;
         background: url("./assests/main/populars/planer.png") no-repeat center
           center;
-        background-size: cover;
+        background-size: cover; /* Используем cover для адаптивности */
+        background-position: center center; /* Центрируем изображение */
         opacity: 1;
         transition: opacity 1s ease;
       }
@@ -337,9 +332,13 @@
         max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
     }
 
+    &:hover .populars__percent {
+      margin-top: 0;
+    }
+
     /* Это свойство для восстановления начальных состояний при убирании мышки */
     .populars__filter {
-      max-width: 13.3125rem;
+      max-width: 31.5%;
       transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
         opacity 1s ease;
     }
@@ -349,6 +348,64 @@
       max-height: 0;
       transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
         max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+
+      .populars__buy,
+      .populars__more {
+        width: 13.25rem;
+        height: 3.5rem;
+      }
     }
+  }
+}
+
+@mixin smallTextPopulars() {
+  .populars__i {
+    font-size: 0.625;
+    line-height: 1rem;
+  }
+  .populars__title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+  .populars__SCHA,
+  .populars__PAI {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+  .populars__percent {
+    i {
+      font-size: 2.25rem;
+      line-height: 3rem;
+    }
+  }
+  .populars__card .populars__btns .populars__buy,
+  .populars__card .populars__btns .populars__more {
+    width: 8.875rem;
+    height: 2rem;
+    font-size: 0.5rem;
+    line-height: 1rem;
+  }
+  .populars__card:hover .populars__btns {
+    margin-top: 0.408125rem;
+  }
+  .populars__percent {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 64.5rem) and (min-width: 45.6875rem) {
+  @include smallTextPopulars();
+}
+
+@media (max-width: 36rem) {
+  @include smallTextPopulars();
+  .populars__main-title {
+    font-size: 1.75rem;
+    line-height: 2.625rem;
+  }
+
+  .populars__line {
+    height: 1.125rem;
+    width: 11rem;
   }
 }
