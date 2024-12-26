@@ -12,6 +12,7 @@
   margin: 0 auto;
   height: 100%;
   background-color: transparent;
+  padding: 0 1.125rem;
   // outline: black 1px solid;
 }
 
@@ -22,12 +23,19 @@
 // }
 
 .hidden {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  width: 0;
   padding: 0;
   margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  * {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
 }
 
 .hidden-top {

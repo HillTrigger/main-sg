@@ -48,11 +48,11 @@
     }
   }
   &__cards {
-    margin-left: -29.5rem;
-    margin-right: 29.5rem;
+    // margin-left: -29.5rem;
+    // margin-right: 29.5rem;
   }
   &__card {
-    // max-width: 26.75rem;
+    width: 26.75rem;
     height: 19.5rem;
     position: relative;
     opacity: 0;
@@ -89,5 +89,33 @@
   &__date {
     position: absolute;
     bottom: 0;
+  }
+}
+
+@media (max-width: 36rem) {
+  .forecast__cards {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+  .forecast__title {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+  .forecast__btns {
+    display: none;
+  }
+  .forecast__line {
+    width: 100%; //16.375
+    height: 0.125rem;
+    background-color: #c7006b;
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .forecast__desc {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .forecast__card {
+    height: 13.25rem;
   }
 }
