@@ -1,20 +1,32 @@
 @use "@/styles/color";
 
 .stats {
-  display: flex;
+  // display: flex;
   padding: 9rem 0;
+  display: grid;
+  grid-template-columns:
+    minmax(auto, 20.3125rem) 0.2783300198807157fr minmax(auto, 16.5rem) 0.3976143141153082fr
+    minmax(auto, 17.5625rem) 0.3240556660039761fr;
   &__stat {
-    height: 10rem;
     opacity: 0;
-    &:first-child {
-      margin-left: 1.875rem;
-      margin-right: 8.75rem;
+    text-wrap: nowrap;
+
+    &:nth-child(2) {
+      grid-column: 3 /4;
     }
-    &:last-child {
-      margin-left: 12.5rem;
+    &:nth-child(3) {
+      grid-column: 5 /6;
     }
+    // &:first-child {
+    //   margin-left: 1.875rem;
+    //   margin-right: 8.75rem;
+    // }
+    // &:last-child {
+    //   margin-left: 12.5rem;
+    // }
   }
   &__value {
+    height: 10rem;
     // display: flex;
     // align-items: flex-end;
     text-transform: uppercase;
@@ -36,5 +48,19 @@
   &__stat.element-show {
     opacity: 1;
     transition: opacity 1s;
+  }
+}
+
+@media (max-width: 59rem) {
+  .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
+    padding: 3rem 1.125rem;
+
+    &__value {
+    }
   }
 }
