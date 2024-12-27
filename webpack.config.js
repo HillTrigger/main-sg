@@ -36,7 +36,7 @@ module.exports = {
   },
   output: {
     filename: filename("js"),
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
   },
   resolve: {
     extensions: [".js", ".json"],
@@ -84,11 +84,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "./src/assests"),
-          to: path.resolve(__dirname, "dist/assests"),
+          to: path.resolve(__dirname, "docs/assests"),
         },
         // {
         //   from: path.resolve(__dirname, "favicon.ico"),
-        //   to: path.resolve(__dirname, "dist"),
+        //   to: path.resolve(__dirname, "docs"),
         // },
       ],
     }),
