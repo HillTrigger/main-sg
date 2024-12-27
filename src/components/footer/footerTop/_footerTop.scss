@@ -106,7 +106,7 @@
 }
 @media (max-width: 53.75rem) {
   .footer__arrow-up {
-    display: none;
+    display: none !important;
   }
   .footer__mobile-logo {
     display: flex;

@@ -101,15 +101,23 @@
       opacity: 1;
       transform: none;
     }
+    @media (pointer: coarse) {
+      .strategies__btn {
+        bottom: 2.5rem;
+      }
+      .strategies__desc {
+        padding-top: 1rem;
+        padding-bottom: 6.375rem;
+        opacity: 1;
+        // height: 8.5rem !important;
+        visibility: visible;
+      }
+    }
+
     &:hover {
       .strategies__btn {
         bottom: 2.5rem;
       }
-
-      // .strategies__image {
-      //   margin-bottom: -8rem;
-      // }
-
       .strategies__desc {
         padding-top: 1rem;
         padding-bottom: 6.375rem;

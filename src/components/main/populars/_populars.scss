@@ -1,361 +1,322 @@
 @use "@/styles/color";
 
-.populars {
-  &__buble {
-    font-size: 0.75rem;
-    line-height: 1.125rem;
-    max-width: 16rem;
-    padding: 0 0.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.8125rem;
-    background-color: color.$background;
+.populars__btns-wrapper {
+  margin-top: auto;
+}
+.populars__btns {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0rem;
+  max-height: 0rem;
+  overflow: hidden;
+}
+.populars__buble {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  max-width: 16rem;
+  padding: 0 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.8125rem;
+  background-color: color.$background;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  top: -5.375rem;
+  left: -1.3125rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease; /* Убираем задержку для visibility */
+
+  &::before {
+    content: "";
     position: absolute;
-    z-index: 1;
+    top: 90%;
+    left: 45%;
+    transform: rotate(-90deg);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-right: 13px solid color.$background;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-    top: -86px;
-    left: -33px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease; /* Убираем задержку для visibility */
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 90%;
-      left: 45%;
-      transform: rotate(-90deg);
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-right: 13px solid color.$background;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-      border-bottom: 12px solid transparent;
-      z-index: -1;
-    }
+    border-bottom: 12px solid transparent;
+    z-index: -1;
   }
-  .populars__info-svg:hover ~ .populars__buble {
+}
+
+.populars__info-svg:hover ~ .populars__buble {
+  opacity: 1;
+  visibility: visible;
+  // z-index: 999;
+}
+.populars__info-svg {
+  color: color.$secondary;
+}
+.populars__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(20.25rem, 1fr));
+  gap: 1.25rem;
+
+  @media (max-width: 45.75rem) {
+    padding: 0 1.125rem;
+    grid-template-columns: repeat(1, minmax(20.25rem, 1fr));
+  }
+}
+.populars__main-title {
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 5rem;
+  margin-bottom: 4rem;
+
+  span {
+    // color: red;
+    position: relative;
+    z-index: 0;
+  }
+
+  opacity: 0;
+  transition: opacity 1s ease;
+  &.element-show {
     opacity: 1;
-    visibility: visible;
   }
-  .populars__info-svg {
+}
+.populars__line {
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  height: 2rem;
+  width: 24.75rem;
+  background-color: color.$tertiary;
+  z-index: -1;
+
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s,
+    opacity 0s ease 0.5s;
+  transform: translateX(200%) translateY(200%);
+  &.element-show {
+    opacity: 1;
+    transform: none;
+  }
+}
+.populars__filter {
+  position: absolute;
+  right: 0;
+  // max-width: 13.25rem;
+  height: 30.875rem;
+  z-index: -1;
+}
+.populars__info {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.populars__i {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 10%;
+  margin-bottom: 0.21875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+}
+.populars__title {
+  font-size: 2.25rem;
+  line-height: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.8125rem;
+}
+
+.populars__SCHA {
+  margin-bottom: 0.4375rem;
+}
+.populars__PAI {
+  // padding-bottom: 5.6875rem;
+  // padding-bottom: 10.25rem;
+}
+.populars__SCHA,
+.populars__PAI {
+  color: color.$text-muted;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  i {
+    color: color.$text-primary;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
+.populars__percent {
+  // position: absolute;
+  // bottom: 0;
+  // padding-bottom: 1rem;
+  margin-top: 4.5rem;
+  transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+
+  i {
     color: color.$secondary;
-  }
-
-  &__cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(20.25rem, 1fr));
-    gap: 1.25rem;
-
-    @media (max-width: 45.75rem) {
-      padding: 0 1.125rem;
-      grid-template-columns: repeat(1, minmax(20.25rem, 1fr));
-    }
-  }
-  &__main-title {
+    font-style: normal;
     font-weight: 600;
     font-size: 4rem;
-    line-height: 5rem;
-    margin-bottom: 4rem;
-
-    span {
-      // color: red;
-      position: relative;
-      z-index: 0;
-    }
-
-    opacity: 0;
-    transition: opacity 1s ease;
-    &.element-show {
-      opacity: 1;
-    }
+    line-height: 4.6875rem;
   }
+}
 
-  &__line {
-    position: absolute;
-    bottom: 0rem;
-    left: 0rem;
-    height: 2rem;
-    width: 24.75rem;
-    background-color: color.$tertiary;
-    z-index: -1;
+.populars__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.populars__all-products {
+  margin-top: 3.4375rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: color.$background;
+  border: 1px color.$primary solid;
+  text-transform: uppercase;
+  background-image: linear-gradient(transparent 50%, color.$primary 50%);
+  background-size: 200% 200%;
 
-    opacity: 0;
-    transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s,
-      opacity 0s ease 0.5s;
-    transform: translateX(200%) translateY(200%);
-    &.element-show {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  &__filter {
+  transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    background-position 0.2s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  opacity: 0;
+  transform: translateY(100%);
+}
+.populars__all-products.element-show {
+  opacity: 1;
+  transform: none;
+}
+.populars__all-products:hover {
+  color: color.$background;
+  background-position: 0 100%;
+}
+.populars__card {
+  padding: 3.5rem;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px color.$border solid;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20%);
+  transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+}
+
+.populars__card-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 23.3125rem;
+}
+
+.populars__card.element-show {
+  opacity: 1;
+  transform: none;
+}
+
+.populars__card:nth-child(1) {
+  .populars__filter::after {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
-    // max-width: 13.25rem;
-    height: 30.875rem;
-    z-index: -1;
+    bottom: 0;
+    background: url("./assests/main/populars/compas.png") no-repeat center
+      center;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 1s ease;
   }
-  &__info {
-    position: relative;
-    height: 100%;
-    width: 100%;
-
-    &-svg {
-    }
+}
+.populars__card:nth-child(2) {
+  .populars__filter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./assests/main/populars/planer.png") no-repeat center
+      center;
+    background-size: cover; /* Используем cover для адаптивности */
+    background-position: center center; /* Центрируем изображение */
+    opacity: 1;
+    transition: opacity 1s ease;
   }
-
-  &__i {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    letter-spacing: 10%;
-    margin-bottom: 0.21875rem;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    position: relative;
+}
+.populars__card:nth-child(3) {
+  .populars__filter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./assests/main/populars/keys.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 1s ease;
   }
-  &__title {
-    font-size: 2.25rem;
-    line-height: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.8125rem;
+}
+.populars__card:nth-child(4) {
+  .populars__filter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./assests/main/populars/vanil.png") no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 1s ease;
   }
+}
+/* Это свойство для восстановления начальных состояний при убирании мышки */
+.populars__filter {
+  max-width: 31.5%;
+  transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    opacity 1s ease;
+}
+.populars__btns {
+  margin-top: 0;
+  max-height: 0;
+  transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 
-  &__SCHA {
-    margin-bottom: 0.4375rem;
+  .populars__buy,
+  .populars__more {
+    width: 13.25rem;
+    height: 3.5rem;
   }
-  &__PAI {
-    // padding-bottom: 5.6875rem;
-    // padding-bottom: 10.25rem;
-  }
-  &__SCHA,
-  &__PAI {
-    color: color.$text-muted;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    i {
-      color: color.$text-primary;
-      font-weight: 600;
-      font-style: normal;
-    }
-  }
+}
+.populars__card:hover .populars__filter::after {
+  opacity: 0;
+}
 
-  &__percent {
-    // position: absolute;
-    // bottom: 0;
-    // padding-bottom: 1rem;
-    margin-top: 4.5rem;
-    transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+.populars__card:hover .populars__filter {
+  max-width: 100%;
+  transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    opacity 1s ease;
+}
 
-    i {
-      color: color.$secondary;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 4rem;
-      line-height: 4.6875rem;
-    }
-  }
-  // &__card {
-  //   position: relative;
+.populars__card:hover .populars__btns {
+  margin-top: 1rem;
+  max-height: 3.5rem;
+  transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+    max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+}
 
-  // }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    // background: rgb(252,242,227);
-    // background: linear-gradient(90deg, rgba(252,242,227,1) 0%, rgba(252,242,227,0) 100%);
-    // background: rgb(255,251,245);
-    // background: linear-gradient(90deg, rgba(255,251,245,1) 0%, rgba(255,255,255,0) 100%);
-    // background: linear-gradient(
-    //     90deg,
-    //     rgba(252, 242, 227, 1) 0%,
-    //     rgba(252, 242, 227, 0) 100%
-    //   ),
-    //   linear-gradient(
-    //     90deg,
-    //     rgba(255, 251, 245, 1) 0%,
-    //     rgba(255, 255, 255, 0) 100%
-    //   );
-  }
-  &__all-products {
-    margin-top: 3.4375rem;
-    font-weight: 600;
-    font-size: 0.75rem;
-    line-height: 1.125rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: color.$background;
-    border: 1px color.$primary solid;
-    text-transform: uppercase;
-    background-image: linear-gradient(transparent 50%, color.$primary 50%);
-    background-size: 200% 200%;
-    &:hover {
-      color: color.$background;
-      background-position: 0 100%;
-    }
-
-    transition: opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-      transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-      background-position 0.2s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-    opacity: 0;
-    transform: translateY(100%);
-
-    &.element-show {
-      opacity: 1;
-      transform: none;
-    }
-  }
-  &__btns-wrapper {
-    margin-top: auto;
-    // position: absolute;
-    // bottom: 0;
-  }
-  &__btns {
-    display: flex;
-    gap: 1.25rem;
-    // position: absolute;
-    // bottom: 0;
-    margin-top: 0rem;
-    max-height: 0rem;
-    overflow: hidden;
-  }
-
-  // z-index: 1;
-
-  &__card {
-    padding: 3.5rem;
-    padding-right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px color.$border solid;
-    position: relative;
-    // height: 30.875rem;
-    opacity: 0;
-    transform: translateY(20%);
-    transition: transform 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-      opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-
-    overflow: hidden;
-    &-info {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      max-width: 23.3125rem;
-    }
-
-    &.element-show {
-      opacity: 1;
-      transform: none;
-    }
-
-    &:nth-child(1) {
-      .populars__filter::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("./assests/main/populars/compas.png") no-repeat center
-          center;
-        background-size: cover;
-        opacity: 1;
-        transition: opacity 1s ease;
-      }
-    }
-    &:nth-child(2) {
-      .populars__filter::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("./assests/main/populars/planer.png") no-repeat center
-          center;
-        background-size: cover; /* Используем cover для адаптивности */
-        background-position: center center; /* Центрируем изображение */
-        opacity: 1;
-        transition: opacity 1s ease;
-      }
-    }
-    &:nth-child(3) {
-      .populars__filter::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("./assests/main/populars/keys.jpg") no-repeat center
-          center;
-        background-size: cover;
-        opacity: 1;
-        transition: opacity 1s ease;
-      }
-    }
-    &:nth-child(4) {
-      .populars__filter::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url("./assests/main/populars/vanil.png") no-repeat center
-          center;
-        background-size: cover;
-        opacity: 1;
-        transition: opacity 1s ease;
-      }
-    }
-
-    &:hover .populars__filter::after {
-      opacity: 0;
-    }
-
-    &:hover .populars__filter {
-      max-width: 100%;
-      transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-        opacity 1s ease;
-    }
-
-    &:hover .populars__btns {
-      margin-top: 1rem;
-      max-height: 3.5rem;
-      transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-        max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-    }
-
-    &:hover .populars__percent {
-      margin-top: 0;
-    }
-
-    /* Это свойство для восстановления начальных состояний при убирании мышки */
-    .populars__filter {
-      max-width: 31.5%;
-      transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-        opacity 1s ease;
-    }
-
-    .populars__btns {
-      margin-top: 0;
-      max-height: 0;
-      transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
-        max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
-
-      .populars__buy,
-      .populars__more {
-        width: 13.25rem;
-        height: 3.5rem;
-      }
-    }
-  }
+.populars__card:hover .populars__percent {
+  margin-top: 0;
 }
 
 @mixin smallTextPopulars() {
@@ -385,13 +346,55 @@
     font-size: 0.5rem;
     line-height: 1rem;
   }
-  .populars__card:hover .populars__btns {
+  .populars__btns {
     margin-top: 0.408125rem;
   }
   .populars__percent {
     margin-top: 2rem;
   }
+  .populars__all-products {
+    width: 7.5rem;
+    height: 7.5rem;
+    font-size: 0.625rem;
+    line-height: 1rem;
+  }
+  .populars__card {
+    padding: 2.5rem;
+    // padding-right: 0;
+  }
 }
+
+/* ============================================== MOBILE STYLES ================================================= */
+
+@media (pointer: coarse) {
+  .populars__filter::after {
+    opacity: 0;
+  }
+
+  .populars__filter {
+    max-width: 100%;
+    transition: max-width 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+      opacity 1s ease;
+  }
+  .populars__filter::after {
+    opacity: 0 !important;
+  }
+  .populars__btns {
+    margin-top: 1rem;
+    max-height: 3.5rem;
+    transition: margin 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99),
+      max-height 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  }
+
+  .populars__percent {
+    margin-top: 0;
+  }
+  // .populars__all-products:active {
+  //   color: color.$background;
+  //   background-position: 0 100%;
+  // }
+}
+/* ============================================== MOBILE STYLES ================================================= */
 
 @media (max-width: 64.5rem) and (min-width: 45.6875rem) {
   @include smallTextPopulars();
