@@ -27,5 +27,5 @@ export function handleScroll() {
 
   closeContacts();
   closeSearchInput();
-  closeSideBar();
+  // closeSideBar();
 }

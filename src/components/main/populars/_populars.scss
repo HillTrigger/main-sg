@@ -57,7 +57,7 @@
   gap: 1.25rem;
 
   @media (max-width: 45.75rem) {
-    padding: 0 1.125rem;
+    padding: 0;
     grid-template-columns: repeat(1, minmax(20.25rem, 1fr));
   }
 }

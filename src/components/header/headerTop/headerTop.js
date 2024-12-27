@@ -52,6 +52,7 @@ burgerBtn.addEventListener("click", (e) => {
 });
 
 /* ======================= SIDE BAR MENU ======================= */
+const headerTopInner = document.querySelector(".header__top-inner");
 
 document.addEventListener("click", function (e) {
   if (!contacts.contains(e.target) && e.target !== dropdown) {
@@ -60,7 +61,11 @@ document.addEventListener("click", function (e) {
   if (!searchInput.contains(e.target) && !searchBtn.contains(e.target)) {
     closeSearchInput();
   }
-  if (!sideMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+  if (
+    !sideMenu.contains(e.target) &&
+    !burgerBtn.contains(e.target) &&
+    !headerTopInner.contains(e.target)
+  ) {
     closeSideBar();
   }
 });

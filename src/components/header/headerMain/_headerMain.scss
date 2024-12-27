@@ -2,14 +2,14 @@
 
 .header {
   background-color: #fbf2e3;
-
+  position: relative !important;
   &__inner {
     display: grid;
     grid-template-rows: calc(280 / 612 * 1fr) 368px calc(332 / 612 * 1fr);
     position: relative;
     max-width: 85.75rem;
     margin: 0 auto;
-    position: relative;
+    // position: relative;
     width: 100vw;
     height: 100vh;
   }
@@ -103,6 +103,7 @@
     line-height: 2rem;
     font-weight: 400;
     // padding: 0 2.5rem;
+    padding-right: 3.5rem;
     &-page {
       display: inline-block;
       border-radius: 50%;
@@ -254,5 +255,35 @@
       padding: 0 1.125rem;
       padding-top: 6.5rem;
     }
+  }
+}
+
+@media (max-width: 59rem) {
+  .header__title {
+    i {
+      font-size: 1.75rem;
+      line-height: 2.625rem;
+    }
+  }
+  .header__sub-title {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .header__sub-title span {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+  .header__bg--1,
+  .header__bg--2,
+  .header__bg--3,
+  .header__bg--4 {
+    top: 30%;
+    height: 70%;
+  }
+  .header__sub-title {
+    margin-top: 0.25rem;
+  }
+  .header__pagination {
+    margin-bottom: 2rem;
   }
 }
