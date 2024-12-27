@@ -3,10 +3,18 @@ export function handleDropdown(e, contacts, dropdownArrow) {
   if (!!e.target.closest(".header__contacts")) return;
 
   if (contacts.classList.contains("hidden")) {
-    contacts.classList.remove("hidden");
-    dropdownArrow.classList.add("header__dropdown-arrow--open");
+    openDropdown(contacts, dropdownArrow);
   } else {
-    contacts.classList.add("hidden");
-    dropdownArrow.classList.remove("header__dropdown-arrow--open");
+    closeDropdown(contacts, dropdownArrow);
   }
+}
+
+function openDropdown(contacts, dropdownArrow) {
+  contacts.classList.remove("hidden");
+  dropdownArrow.classList.add("header__dropdown-arrow--open");
+}
+
+function closeDropdown(contacts, dropdownArrow) {
+  contacts.classList.add("hidden");
+  dropdownArrow.classList.remove("header__dropdown-arrow--open");
 }

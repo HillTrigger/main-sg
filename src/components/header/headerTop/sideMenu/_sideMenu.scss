@@ -50,3 +50,32 @@
   background-color: white;
   border-bottom: 1px #e0e0e0 solid;
 }
+
+.side-menu__search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px #e0e0e0 solid;
+
+  opacity: 0;
+  visibility: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  &--active {
+    height: 2.75rem;
+    padding: 0.75rem 1.125rem;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.side-menu__search-close {
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+}
+.side-menu__search-input {
+  height: 100%;
+  width: 100%;
+}

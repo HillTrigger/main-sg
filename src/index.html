@@ -46,6 +46,31 @@
                   />
                 </svg>
               </a>
+              <a class="header__search-mobile">
+                <!-- <img src="./assests/header/headerTop/search.svg" alt="search" /> -->
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.572 21.433C17.0159 21.433 21.4291 17.0198 21.4291 11.5759C21.4291 6.13194 17.0159 1.71875 11.572 1.71875C6.12804 1.71875 1.71484 6.13194 1.71484 11.5759C1.71484 17.0198 6.12804 21.433 11.572 21.433Z"
+                    stroke="currentColor "
+                    stroke-width="1.33"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M23.1451 23.1451C23.1451 23.1451 20.6852 20.812 18.8594 18.8594"
+                    stroke="currentColor"
+                    stroke-width="1.33"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
               <a class="header__profile">
                 <svg
                   width="24"
@@ -120,15 +145,37 @@
               </div>
             </div>
             <div class="header__side-menu side-menu">
-              <nav class="side-menu__navbar">
-                <a href="#" class="side-menu__navbar-link">о компании</a>
-                <a href="#" class="side-menu__navbar-link">услуги</a>
-                <a href="#" class="side-menu__navbar-link">новости</a>
-                <a href="#" class="side-menu__navbar-link"
-                  >раскрытие информации</a
-                >
-                <a href="#" class="side-menu__navbar-link">контакты</a>
-              </nav>
+              <div class="side-menu__search-wrapper">
+                <div class="side-menu__search">
+                  <input
+                    class="side-menu__search-input"
+                    placeholder="Поиск по сайту..."
+                  />
+                  <svg
+                    class="side-menu__search-close"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.39844 14.4988L14.5978 1.33594M1.39844 1.33594L14.5978 14.4988L1.39844 1.33594Z"
+                      stroke="#828282"
+                      stroke-linecap="square"
+                    />
+                  </svg>
+                </div>
+                <nav class="side-menu__navbar">
+                  <a href="#" class="side-menu__navbar-link">о компании</a>
+                  <a href="#" class="side-menu__navbar-link">услуги</a>
+                  <a href="#" class="side-menu__navbar-link">новости</a>
+                  <a href="#" class="side-menu__navbar-link"
+                    >раскрытие информации</a
+                  >
+                  <a href="#" class="side-menu__navbar-link">контакты</a>
+                </nav>
+              </div>
               <div class="side-menu__contacts contacts">
                 <div class="contacts__tel">
                   <a class="contacts__link" href="tel:+78002507015">

@@ -1,4 +1,5 @@
-import "./js/handleSearch";
+// import "./js/handleSearch";
+import "./js/searchInput.js";
 
 import { handleDropdown } from "./js/handleDropdown";
 import { handleScroll } from "./js/handleScroll";
@@ -18,23 +19,25 @@ dropdown.addEventListener("click", (e) =>
   handleDropdown(e, contacts, dropdownArrow)
 );
 /* ======================= HEADER DROPDOWN ======================= */
-
-/* ======================= SEARCH INPUT ======================= */
 const searchBtn = document.querySelector(".header__search");
 const searchInput = document.querySelector(".header__top-input");
-const closeSearchInputBtn = document.querySelector(".header__search-close");
 
-searchBtn.addEventListener("click", () => {
-  searchInput.classList.add("header__top-input--active");
-  setTimeout(() => {
-    searchInput.focus();
-  }, 1000);
-});
+// /* ======================= SEARCH INPUT MOBILE ======================= */
+// const searchBtn = document.querySelector(".header__search");
+// const searchInput = document.querySelector(".header__top-input");
+// const closeSearchInputBtn = document.querySelector(".header__search-close");
 
-closeSearchInputBtn.addEventListener("click", () => {
-  closeSearchInput();
-});
-/* ======================= SEARCH INPUT ======================= */
+// searchBtn.addEventListener("click", () => {
+//   searchInput.classList.add("header__top-input--active");
+//   setTimeout(() => {
+//     searchInput.focus();
+//   }, 1000);
+// });
+
+// closeSearchInputBtn.addEventListener("click", () => {
+//   closeSearchInput();
+// });
+// /* ======================= SEARCH INPUT MOBILE ======================= */
 
 /* ======================= SIDE BAR MENU ======================= */
 

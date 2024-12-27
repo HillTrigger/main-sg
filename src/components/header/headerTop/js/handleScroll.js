@@ -1,11 +1,12 @@
+import { searchClose } from "../sideMenu/js/searchClose";
 import { closeContacts } from "./closeContacts";
 import { closeSearchInput } from "./closeSearchInput";
-import { closeSideBar } from "./closeSideBar";
+import { headerTopInnerActive } from "./headerTopInnerActive";
+import { headerTopInnerRemove } from "./headerTopInnerRemove";
 
 let lastScrollTop = 0; // Запоминаем предыдущую позицию прокрутки
 let headerTop = document.querySelector(".header__top");
 let headerTopInner = document.querySelector(".header__top-inner");
-
 const burgerBtn = document.querySelector(".header__burger");
 
 export function handleScroll() {
@@ -20,12 +21,13 @@ export function handleScroll() {
   lastScrollTop = currentScroll;
 
   if (currentScroll > 0) {
-    headerTopInner.classList.add("header__top-inner--active");
+    headerTopInnerActive(headerTopInner);
   } else if (!burgerBtn.classList.contains("header__burger--active")) {
-    headerTopInner.classList.remove("header__top-inner--active");
+    headerTopInnerRemove(headerTopInner);
   }
 
   closeContacts();
   closeSearchInput();
+  // searchClose();
   // closeSideBar();
 }

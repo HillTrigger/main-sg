@@ -2,6 +2,18 @@
 @use "@/styles/color";
 
 .header {
+  .header__search-mobile {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+    * {
+      transition: color 0.2s ease;
+    }
+
+    &:hover * {
+      color: color.$primary;
+    }
+  }
   &__top {
     z-index: 100;
     position: fixed;
@@ -26,9 +38,6 @@
       align-items: center;
       // border: 1px #e0e0e0 solid;
       // justify-content: space-between;
-      &--active {
-        /* STYLES IN SIDEMENU.SCSS */
-      }
     }
   }
   &__logo {
@@ -67,6 +76,8 @@
     align-items: center;
   }
   &__search {
+    display: flex;
+    align-items: center;
     margin-right: 2.25rem;
     cursor: pointer;
     * {
@@ -159,7 +170,6 @@
   }
   &__search-close {
     display: inline-block;
-    // border: 1px black solid;
     cursor: pointer;
   }
 
@@ -169,7 +179,6 @@
     display: flex;
     display: none;
     align-items: center;
-    // border: 1px black solid;
     position: relative;
     cursor: pointer;
 
@@ -179,7 +188,6 @@
       height: 2px;
       background-color: black;
       border-radius: 1rem;
-      // transition: width 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
       &::before,
       &::after {
         content: "";
@@ -217,56 +225,76 @@
 
 @media (max-width: 77.375rem) {
   .header {
-    // .header__search {
-    //   display: block;
-    // }
     &__side-menu {
       display: flex;
     }
-
     &__top-inner {
       grid-template-columns: 6.4375rem 1fr 6.25rem;
       padding: 0;
-      // display: flex;
-      // justify-content: space-between;
-      // width: 22.5rem;
     }
-
     &__logo {
       padding-left: 1.125rem;
     }
-
     &__menu {
       display: flex;
       padding: 1.125rem;
       gap: 1.5rem;
     }
-
     &__profile {
       margin: 0;
     }
-
     &__navbar {
       display: none;
     }
-
     &__search {
       display: none;
     }
-
-    &__dropdown {
-      display: none;
-    }
-
     &__flag {
       display: none;
     }
-
+    &__dropdown {
+      display: none;
+    }
     &__burger {
       display: flex;
     }
   }
 }
+
+.header__menu--side-bar-open {
+  .header__search-mobile {
+    display: flex;
+    align-items: center;
+  }
+  .header__flag {
+    display: flex;
+  }
+  .header__profile {
+    display: none;
+  }
+}
+// .header__top-inner--active {
+//   .header__search-mobile {
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   .header__flag {
+//     display: block;
+//   }
+//   .header__profile {
+//     display: none;
+//   }
+
+//   /* STYLES IN SIDEMENU.SCSS */
+// }
+// .header__side-menu:has(.header__side-menu--active) .header__search {
+//   display: block;
+// }
+
+// .header__side-menu:has(.header__side-menu--active) .header__flag {
+//   display: block;
+// }
 
 // @media (max-width: 45.75rem) {
 //   .header__title {
