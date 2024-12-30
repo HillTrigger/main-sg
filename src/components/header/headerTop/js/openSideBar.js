@@ -14,7 +14,6 @@ export function openSideBar() {
   sideMenu.classList.add("header__side-menu--active");
   headerTopInner.classList.add("header__top-inner--active");
   headerMenu.classList.add("header__menu--side-bar-open");
-
   body.classList.add("lock");
   headerMenu.style.paddingRight = `${paddingOffSet + remToPixels(1.125)}px`;
   body.style.paddingRight = `${paddingOffSet}px`;

@@ -12,6 +12,8 @@
     // position: relative;
     width: 100vw;
     height: 100vh;
+    /* нужно для нормального отображения в мобильных браузерах */
+    min-height: -webkit-fill-available;
   }
 
   &__bg--1,
