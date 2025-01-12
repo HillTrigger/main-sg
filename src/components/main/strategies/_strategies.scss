@@ -85,16 +85,16 @@
     transform: translateY(30%);
 
     &:nth-child(1) {
-      background: color.$surface url(@/assests/main/strategies/1back.png)
+      background: color.$surface url(@/assets/main/strategies/1back.png)
         no-repeat left bottom;
     }
 
     &:nth-child(2) {
-      background: color.$surface url(@/assests/main/strategies/2back.png)
+      background: color.$surface url(@/assets/main/strategies/2back.png)
         no-repeat left bottom;
     }
     &:nth-child(3) {
-      background: color.$surface url(@/assests/main/strategies/3back.png)
+      background: color.$surface url(@/assets/main/strategies/3back.png)
         no-repeat left bottom;
     }
     &.element-show {
@@ -164,16 +164,16 @@
       width: 20.25rem; // Ширина карточки уменьшается для маленьких экранов
 
       &:nth-child(1) {
-        background: color.$surface url(@/assests/main/strategies/1backM.png)
+        background: color.$surface url(@/assets/main/strategies/1backM.png)
           no-repeat left bottom;
       }
 
       &:nth-child(2) {
-        background: color.$surface url(@/assests/main/strategies/2backM.png)
+        background: color.$surface url(@/assets/main/strategies/2backM.png)
           no-repeat left bottom;
       }
       &:nth-child(3) {
-        background: color.$surface url(@/assests/main/strategies/3backM.png)
+        background: color.$surface url(@/assets/main/strategies/3backM.png)
           no-repeat left bottom;
       }
     }

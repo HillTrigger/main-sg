@@ -10,8 +10,7 @@ const isDev = process.env.NODE_ENV === "development";
 
 console.log("IS DEV: ", isDev);
 
-const filename = (ext) =>
-  isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].${ext}`); //.[contenthash]
 
 const cssLoaders = (...extra) => {
   const loaders = [
@@ -74,7 +73,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./index.html", // Путь к вашему шаблону
-      favicon: "./assests/favicon.ico", //Путь к вашей иконке
+      // favicon: "./assets/favicon.ico", //Путь к вашей иконке
       // chunks: ["main"], // Порядок загрузки скриптов
       // inject: "body", // Скрипты будут вставлены в конец body
     }),
@@ -83,8 +82,8 @@ module.exports = {
       // Плагин для копирования каталогов
       patterns: [
         {
-          from: path.resolve(__dirname, "./src/assests"),
-          to: path.resolve(__dirname, "docs/assests"),
+          from: path.resolve(__dirname, "./src/assets"),
+          to: path.resolve(__dirname, "docs/assets"),
         },
         // {
         //   from: path.resolve(__dirname, "favicon.ico"),
@@ -123,8 +122,26 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpe?g|gif)$/i,
-        type: "asset/resource",
+        type: "asset/resource", // Используется встроенный механизм Webpack
+        generator: {
+          filename: (pathData) => {
+            // pathData.module.resource содержит абсолютный путь к файлу
+            // Получаем путь относительно исходной папки src
+            const relativePath = path.relative(
+              path.resolve(__dirname, "src"),
+              pathData.module.resource
+            );
+
+            // Создаем путь к файлу с сохранением исходной структуры папок
+            return `${relativePath}`;
+          },
+        },
+        exclude: /node_modules/,
       },
+      // {
+      //   test: /\.(svg|png|jpe?g|gif)$/i,
+      //   type: "asset/resource",
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,

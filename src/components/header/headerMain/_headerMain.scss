@@ -31,16 +31,16 @@
     height: 100%;
   }
   &__bg--1 {
-    background-image: url(./assests/header/headerMain/back1.jpg);
+    background-image: url("./assets/header/headerMain/back1.jpg");
   }
   &__bg--2 {
-    background-image: url(./assests/header/headerMain/back2.jpg);
+    background-image: url("./assets/header/headerMain/back2.jpg");
   }
   &__bg--3 {
-    background-image: url(./assests/header/headerMain/back3.jpg);
+    background-image: url("./assets/header/headerMain/back3.jpg");
   }
   &__bg--4 {
-    background-image: url(./assests/header/headerMain/back4.jpg);
+    background-image: url("./assets/header/headerMain/back4.jpg");
   }
   &__text {
     grid-row: 2 / 3;
