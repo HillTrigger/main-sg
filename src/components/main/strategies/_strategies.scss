@@ -29,6 +29,7 @@
     opacity: 0;
     overflow: hidden;
     line-height: 1.5rem;
+    max-height: 0;
     transition: padding 1s cubic-bezier(0.25, 0.74, 0.22, 0.99),
       opacity 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
   }
@@ -52,7 +53,12 @@
   }
 
   &__cards {
-    display: flex;
+    // display: flex;
+    // gap: 1.25rem;
+    // justify-content: center;
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, 27rem);
     gap: 1.25rem;
     justify-content: center;
   }
@@ -64,7 +70,7 @@
   }
 
   &__card {
-    color: color.$text-surface;
+    // color: color.$text-surface;
     position: relative;
     max-width: 27.75rem;
     width: 100%;
@@ -83,24 +89,29 @@
     opacity: 0;
     // transform: translateY(100%);
     transform: translateY(30%);
+    background-color: color.$surface;
 
     &:nth-child(1) {
-      background: color.$surface url(@/assets/main/strategies/1back.png)
-        no-repeat left bottom;
+      background-image: url(@/assets/main/strategies/1back.png);
+      background-repeat: no-repeat;
+      background-position: left bottom;
     }
 
     &:nth-child(2) {
-      background: color.$surface url(@/assets/main/strategies/2back.png)
-        no-repeat left bottom;
+      background-image: url(@/assets/main/strategies/2back.png);
+      background-repeat: no-repeat;
+      background-position: left bottom;
     }
     &:nth-child(3) {
-      background: color.$surface url(@/assets/main/strategies/3back.png)
-        no-repeat left bottom;
+      background-image: url(@/assets/main/strategies/3back.png);
+      background-repeat: no-repeat;
+      background-position: left bottom;
     }
     &.element-show {
       opacity: 1;
       transform: none;
     }
+
     @media (pointer: coarse) {
       .strategies__btn {
         bottom: 2.5rem;
@@ -140,7 +151,7 @@
 }
 @media (max-width: 85.75rem) {
   .strategies__cards {
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
   }
 }
 
@@ -156,26 +167,27 @@
       height: 1.0625rem;
       width: 11.6875rem;
     }
-    // &__cards {
-    //   flex-wrap: wrap;
-    // }
+    &__cards {
+      grid-template-columns: repeat(auto-fill, 20.25rem);
+      // flex-wrap: wrap;
+    }
     &__card {
       height: 27.1875rem;
-      width: 20.25rem; // Ширина карточки уменьшается для маленьких экранов
+      // width: 20.25rem; // Ширина карточки уменьшается для маленьких экранов
 
-      &:nth-child(1) {
-        background: color.$surface url(@/assets/main/strategies/1backM.png)
-          no-repeat left bottom;
-      }
+      // &:nth-child(1) {
+      //   background: color.$surface url(@/assets/main/strategies/1backM.png)
+      //     no-repeat left bottom;
+      // }
 
-      &:nth-child(2) {
-        background: color.$surface url(@/assets/main/strategies/2backM.png)
-          no-repeat left bottom;
-      }
-      &:nth-child(3) {
-        background: color.$surface url(@/assets/main/strategies/3backM.png)
-          no-repeat left bottom;
-      }
+      // &:nth-child(2) {
+      //   background: color.$surface url(@/assets/main/strategies/2backM.png)
+      //     no-repeat left bottom;
+      // }
+      // &:nth-child(3) {
+      //   background: color.$surface url(@/assets/main/strategies/3backM.png)
+      //     no-repeat left bottom;
+      // }
     }
   }
   .strategies__name {

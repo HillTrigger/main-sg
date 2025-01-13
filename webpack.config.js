@@ -73,6 +73,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./index.html", // Путь к вашему шаблону
+      minify: false,
       // favicon: "./assets/favicon.ico", //Путь к вашей иконке
       // chunks: ["main"], // Порядок загрузки скриптов
       // inject: "body", // Скрипты будут вставлены в конец body
@@ -122,21 +123,20 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpe?g|gif)$/i,
-        type: "asset/resource", // Используется встроенный механизм Webpack
-        generator: {
-          filename: (pathData) => {
-            // pathData.module.resource содержит абсолютный путь к файлу
-            // Получаем путь относительно исходной папки src
-            const relativePath = path.relative(
-              path.resolve(__dirname, "src"),
-              pathData.module.resource
-            );
-
-            // Создаем путь к файлу с сохранением исходной структуры папок
-            return `${relativePath}`;
-          },
-        },
-        exclude: /node_modules/,
+        type: "asset/resource",
+        ...(isDev
+          ? {}
+          : {
+              generator: {
+                filename: (pathData) => {
+                  const relativePath = path.relative(
+                    path.resolve(__dirname, "src"),
+                    pathData.module.resource
+                  );
+                  return `${relativePath}`;
+                },
+              },
+            }),
       },
       // {
       //   test: /\.(svg|png|jpe?g|gif)$/i,
