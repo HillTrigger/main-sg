@@ -51,20 +51,23 @@
   }
   &__title {
     max-width: 49.5rem;
-    display: none;
-    &--active {
-      display: inline;
-    }
-    &--hidden {
-      display: none;
-    }
+    display: inline;
+
+    // &--active {
+    //   display: inline;
+    // }
+    // &--hidden {
+    //   display: none;
+    // }
 
     & i {
+      opacity: 0;
       font-style: normal;
       font-size: 4rem;
       font-weight: 600;
       line-height: 5rem;
-      opacity: 0;
+      display: inline-block; /* Сделать <i> блочным элементом */
+      word-wrap: break-word; /* Разрешить перенос слов */
       filter: blur(3px);
     }
   }
@@ -73,21 +76,24 @@
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
-    display: none;
+    display: inline;
     position: relative;
     // opacity: 0;
     // padding: 0;
     // margin: 0;
     // visibility: hidden;
     // transition: opacity 2s ease, visibility 0s; /* Плавный переход opacity, задержка для visibility */
-    animation-name: appearance;
-    animation-duration: 1s;
-    &--active {
-      display: inline;
-      // opacity: 1; /* Когда элемент становится видимым */
-      // visibility: visible; /* Делаем элемент видимым */
-      // transition: opacity 2s ease, visibility 0s; /* Плавный переход, без задержки для visibility */
+    &.active {
+      animation-name: appearance;
+      animation-duration: 1s;
     }
+
+    // &--active {
+    //   display: inline;
+    //   // opacity: 1; /* Когда элемент становится видимым */
+    //   // visibility: visible; /* Делаем элемент видимым */
+    //   // transition: opacity 2s ease, visibility 0s; /* Плавный переход, без задержки для visibility */
+    // }
   }
 
   &__sub-title span {
@@ -132,6 +138,7 @@
     & i {
       color: color.$primary;
       font-size: 1.125rem;
+      // font-style: normal;
     }
     &-current {
       font-size: 3rem;
@@ -152,11 +159,16 @@
   }
 }
 
-@keyframes scale {
-  to {
-    transform: scale(1);
-  }
-}
+// @keyframes scale {
+//   from {
+//     transform: scale(0.95);
+//     opacity: 0.7;
+//   }
+//   to {
+//     transform: scale(1);
+//     opacity: 1;
+//   }
+// }
 
 @for $i from 1 through 50 {
   .header__title {
@@ -207,12 +219,22 @@
 //   }
 // }
 
-// .header__bg {
-//   animation: scale-bg 0.8s ease; /* Добавляем анимацию */
-//   // background-size: cover; /* Используем cover */
-//   // background-position: center center; /* Центрируем фон */
-// }
+.header__bg {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: transform 0.8s cubic-bezier(0.25, 0.74, 0.22, 0.99);
 
+  // animation: scale-bg 0.8s ease; /* Добавляем анимацию */
+  // background-size: cover; /* Используем cover */
+  // background-position: center center; /* Центрируем фон */
+}
+.header__bg.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  // animation: scale-bg 2s forwards; /* Анимация масштабирования */
+}
 @keyframes appearance {
   0% {
     opacity: 0;
